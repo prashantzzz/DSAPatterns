@@ -32,6 +32,18 @@
             --color-orange-400: rgba(230, 129, 97, 1);
             --color-orange-500: rgba(168, 75, 47, 1);
 
+            /* Light mode colors */
+            --bg-primary: #f5f7fa;
+            --bg-secondary: #ffffff;
+            --card-bg: #ffffff;
+            --sidebar-bg: #fafbfc;
+            --text-color: #1a202c;
+            --text-secondary: #6b7280;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --input-bg: #f9fafb;
+            --hover-bg: rgba(102, 126, 234, 0.08);
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
             /* Background color tokens */
             --color-bg-1: rgba(59, 130, 246, 0.08);
             --color-bg-2: rgba(245, 158, 11, 0.08);
@@ -87,8 +99,43 @@
             --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
+.dark-mode {
+            /* Dark mode colors */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --card-bg: #1e293b;
+            --sidebar-bg: #1a2332;
+            --text-color: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --input-bg: #0f172a;
+            --hover-bg: rgba(102, 126, 234, 0.15);
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            
+            --color-background: var(--color-charcoal-700);
+            --color-surface: var(--color-charcoal-800);
+            --color-text: var(--color-gray-200);
+            --color-text-secondary: rgba(167, 169, 169, 0.7);
+            --color-primary: var(--color-teal-300);
+            --color-primary-hover: var(--color-teal-400);
+            --color-border: rgba(119, 124, 124, 0.3);
+            --shadow-morphism: 8px 8px 16px rgba(0, 0, 0, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.05);
+            --shadow-inset: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.05);
+        }
+
         @media (prefers-color-scheme: dark) {
             :root {
+                --bg-primary: #0f172a;
+                --bg-secondary: #1e293b;
+                --card-bg: #1e293b;
+                --sidebar-bg: #1a2332;
+                --text-color: #f1f5f9;
+                --text-secondary: #94a3b8;
+                --border-color: rgba(255, 255, 255, 0.1);
+                --input-bg: #0f172a;
+                --hover-bg: rgba(102, 126, 234, 0.15);
+                --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+                
                 --color-background: var(--color-charcoal-700);
                 --color-surface: var(--color-charcoal-800);
                 --color-text: var(--color-gray-200);
@@ -118,128 +165,198 @@
 
         body {
             font-family: var(--font-family-base);
-            background: var(--color-background);
-            color: var(--color-text);
+            background: var(--bg-primary);
+            color: var(--text-color);
             line-height: 1.6;
             min-height: 100vh;
             background-image: 
                 radial-gradient(circle at 20% 80%, rgba(50, 184, 198, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(147, 51, 234, 0.05) 0%, transparent 50%);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+
+
+        /* Apply Variables to ALL Elements */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0;
+        }
+
+        .left-sidebar,
+        .right-sidebar {
+            background: var(--sidebar-bg);
+            border-color: var(--border-color);
+        }
+
+        .main-content {
+            background: var(--bg-primary);
+        }
+
+        /* CRITICAL FIX: Card container backgrounds for dark mode */
+        .card,
+        .pattern-card,
+        .topic-card,
+        .card-header,
+        .card-body,
+        .card-content,
+        .pattern-header {
+            background: var(--card-bg) !important;
+            border-color: var(--border-color) !important;
+            color: var(--text-color) !important;
             transition: all 0.3s ease;
         }
 
-        body.dark-mode {
-            --color-background: var(--color-charcoal-700);
-            --color-surface: var(--color-charcoal-800);
-            --color-text: var(--color-gray-200);
-            --color-text-secondary: rgba(167, 169, 169, 0.7);
-            --color-primary: var(--color-teal-300);
-            --color-primary-hover: var(--color-teal-400);
-            --color-border: rgba(119, 124, 124, 0.3);
-            --shadow-morphism: 8px 8px 16px rgba(0, 0, 0, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.05);
-            --shadow-inset: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.05);
-        }
-        
-        /* ISSUE 2 FIX: Filter text color in dark mode */
-        body.dark-mode .filter-button {
-            color: #ffffff !important;
-        }
-
-        /* Header */
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: var(--space-16) 0;
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 253, 0.8);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        body.dark-mode .header {
-            background: rgba(38, 40, 40, 0.8);
+        /* Dark mode explicit overrides for stubborn card elements */
+        .dark-mode .card,
+        .dark-mode .pattern-card,
+        .dark-mode .topic-card,
+        .dark-mode .card-header,
+        .dark-mode .card-body,
+        .dark-mode .card-content,
+        .dark-mode .pattern-header {
+            background: #1e293b !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+            color: #f1f5f9 !important;
         }
 
         @media (prefers-color-scheme: dark) {
-            .header {
-                background: rgba(38, 40, 40, 0.8);
+            .card,
+            .pattern-card,
+            .topic-card,
+            .card-header,
+            .card-body,
+            .card-content,
+            .pattern-header {
+                background: #1e293b !important;
+                border-color: rgba(255, 255, 255, 0.1) !important;
+                color: #f1f5f9 !important;
             }
         }
 
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--space-24);
+        input,
+        select,
+        .dropdown-selected,
+        .dropdown-menu {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+            color: var(--text-color);
+        }
+
+        .dropdown-search input {
+            background: var(--input-bg);
+        }
+
+        .toggle-cards-btn,
+        button {
+            color: var(--text-color);
+            border-color: var(--border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        .section-title,
+        .topic-name,
+        .problem-name {
+            color: var(--text-color);
+        }
+
+        .filter-label,
+        .stat-label,
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .topic-item:hover,
+        .dropdown-option:hover {
+            background: var(--hover-bg);
+        }
+
+        .progress-bar {
+            background: var(--border-color);
+        }
+
+        .video-modal,
+        .modal-overlay {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .video-modal-content,
+        .modal-content {
+            background: var(--card-bg);
+            color: var(--text-color);
+        }
+
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 16px 24px;
+            max-width: 1920px;
+            margin: 0 auto;
         }
 
-        .header-center {
+        .nav-brand h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 3px;
+            background: var(--color-text);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-content {
             display: flex;
             align-items: center;
-            gap: var(--space-24);
+            gap: 24px;
         }
 
-        .search-container {
-            position: relative;
-        }
-
-        .search-input {
-            padding: var(--space-8) var(--space-16) var(--space-8) var(--space-32);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-base);
-            background: var(--color-surface);
-            color: var(--color-text);
-            width: 300px;
-            font-size: var(--font-size-sm);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: var(--space-8);
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--color-text-secondary);
-        }
-
-        .header-stats {
+        .nav-stats {
             display: flex;
-            gap: var(--space-16);
-            align-items: center;
+            gap: 20px;
         }
 
         .stat-item {
-            text-align: center;
-            padding: var(--space-4) var(--space-8);
-            background: var(--color-bg-1);
-            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
         }
 
-        .stat-number {
-            font-weight: 600;
-            font-size: var(--font-size-lg);
-            color: var(--color-primary);
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
         }
 
-        .stat-label {
-            font-size: var(--font-size-xs);
-            color: var(--color-text-secondary);
-        }
-
-        .theme-toggle {
-            padding: var(--space-8);
+        .theme-toggle, .profile-btn {
+            padding: 8px;
             border: none;
             background: var(--color-surface);
-            border-radius: var(--radius-base);
+            border-radius: 6px;
             cursor: pointer;
-            font-size: var(--font-size-lg);
-            transition: transform 0.2s ease;
+            transition: all 0.2s ease;
+            color: var(--color-text);
         }
 
-        .theme-toggle:hover {
-            transform: scale(1.1);
+        .theme-toggle:hover, .profile-btn:hover {
+            background: var(--color-secondary);
+            transform: scale(1.05);
         }
 
         .logo {
@@ -294,44 +411,190 @@
             cursor: pointer;
         }
 
-        /* Main content */
-        .main-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: var(--space-24);
+        /* Responsive Layout */
+        .app-container {
             display: grid;
             grid-template-columns: 280px 1fr 320px;
-            gap: var(--space-24);
-            min-height: calc(100vh - 120px);
+            grid-template-areas: "left-sidebar main-content right-sidebar";
+            gap: 0;
+            min-height: calc(100vh - 64px);
         }
 
-        .left-sidebar, .right-sidebar {
+        .left-sidebar {
+            grid-area: left-sidebar;
             background: var(--color-surface);
-            border-radius: var(--radius-lg);
-            padding: var(--space-24);
-            box-shadow: var(--shadow-morphism);
-            height: fit-content;
-            position: sticky;
-            top: 100px;
+            padding: 24px;
+            overflow-y: auto;
+            border-right: 1px solid var(--color-border);
         }
 
         .main-content {
+            grid-area: main-content;
+            padding: 24px;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: var(--space-24);
         }
 
-        .sidebar-section {
+        .right-sidebar {
+            grid-area: right-sidebar;
+            background: var(--color-surface);
+            padding: 24px;
+            overflow-y: auto;
+            border-left: 1px solid var(--color-border);
+        }
+
+        /* Mobile sidebar toggle buttons */
+        .sidebar-toggle-left,
+        .sidebar-toggle-right {
+            display: none;
+            position: fixed;
+            bottom: 24px;
+            z-index: 95;
+            padding: 12px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-toggle-left {
+            left: 24px;
+        }
+
+        .sidebar-toggle-right {
+            right: 24px;
+        }
+
+        .sidebar-toggle-left:hover,
+        .sidebar-toggle-right:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Combined Topic Progress + Filter Styles */
+        .topics-section {
             margin-bottom: var(--space-24);
         }
 
-        .sidebar-title {
-            font-size: var(--font-size-lg);
+        .section-title {
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: var(--space-16);
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .topic-item {
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .topic-item:hover {
+            background: var(--color-bg-1);
+            border-color: var(--color-primary);
+        }
+
+        .topic-item.active {
+            background: var(--color-bg-1);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .topic-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .topic-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .topic-progress {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-teal-400) 100%);
+            transition: width 0.3s ease;
+        }
+
+        /* Additional sidebar sections */
+        .badges-section,
+        .calendar-section {
+            margin-bottom: var(--space-24);
+        }
+
+        .badges-mini {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge-mini {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--color-bg-2);
             display: flex;
             align-items: center;
-            gap: var(--space-8);
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .badge-mini.earned {
+            background: linear-gradient(45deg, var(--color-primary), var(--color-teal-400));
+        }
+
+        .streak-display {
+            text-align: center;
+            padding: 16px;
+            background: var(--color-bg-3);
+            border-radius: 8px;
+        }
+
+        .streak-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+        }
+
+        .streak-label {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
         }
 
         .hero {
@@ -549,6 +812,10 @@
             display: none;
             gap: var(--space-8);
             flex-direction: column;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+            padding: var(--space-16);
         }
 
         .pattern-card.expanded .problems-list {
@@ -560,40 +827,46 @@
             justify-content: space-between;
             align-items: center;
             padding: var(--space-12) var(--space-16);
-            background: rgba(255, 255, 255, 0.5);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-base);
             transition: all 0.2s ease;
             backdrop-filter: blur(10px);
+            margin-bottom: var(--space-8);
         }
 
         body.dark-mode .problem-item {
-            background: rgba(0, 0, 0, 0.2);
+            background: var(--card-bg) !important;
+            border-color: var(--border-color) !important;
+            color: var(--text-color) !important;
         }
         
         @media (prefers-color-scheme: dark) {
             .problem-item {
-                background: rgba(0, 0, 0, 0.2);
+                background: var(--card-bg);
+                border-color: var(--border-color);
+                color: var(--text-color);
             }
         }
 
         .problem-item:hover {
             transform: translateX(4px);
-            background: rgba(255, 255, 255, 0.8);
+            background: var(--hover-bg);
         }
 
         body.dark-mode .problem-item:hover {
-            background: rgba(0, 0, 0, 0.4);
+            background: var(--hover-bg) !important;
         }
         
         @media (prefers-color-scheme: dark) {
             .problem-item:hover {
-                background: rgba(0, 0, 0, 0.4);
+                background: var(--hover-bg);
             }
         }
 
         .problem-name {
             font-weight: 500;
-            color: var(--color-text);
+            color: var(--text-color);
         }
 
         .difficulty {
@@ -714,6 +987,43 @@
         @media (prefers-color-scheme: dark) {
             .close-btn:hover {
                 background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* Dark mode support for responsive elements */
+        body.dark-mode .navbar {
+            background: var(--color-charcoal-800);
+        }
+
+        body.dark-mode .nav-content {
+            background: var(--color-charcoal-800);
+        }
+
+        body.dark-mode .sidebar-toggle-left,
+        body.dark-mode .sidebar-toggle-right {
+            background: var(--color-teal-300);
+        }
+
+        body.dark-mode .mobile-menu-toggle span {
+            background: var(--color-gray-200);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .navbar {
+                background: var(--color-charcoal-800);
+            }
+            
+            .nav-content {
+                background: var(--color-charcoal-800);
+            }
+            
+            .sidebar-toggle-left,
+            .sidebar-toggle-right {
+                background: var(--color-teal-300);
+            }
+            
+            .mobile-menu-toggle span {
+                background: var(--color-gray-200);
             }
         }
 
@@ -1112,33 +1422,101 @@
             cursor: pointer !important; /* ISSUE 3 FIX: Keep pointer when active */
         }
 
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .main-container {
-                grid-template-columns: 1fr;
-                gap: var(--space-16);
+        /* Responsive Breakpoints */
+        
+        /* Tablet: Hide right sidebar */
+        @media (max-width: 1200px) {
+            .app-container {
+                grid-template-columns: 260px 1fr;
+                grid-template-areas: "left-sidebar main-content";
             }
-
-            .left-sidebar, .right-sidebar {
-                position: static;
-            }
-
-            .nav-links {
+            
+            .right-sidebar {
                 display: none;
             }
+        }
 
-            .search-input {
-                width: 200px;
+        /* Mobile: Hide both sidebars, add toggle buttons */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
             }
-
+            
+            .nav-content {
+                position: fixed;
+                top: 64px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 64px);
+                background: var(--color-surface);
+                flex-direction: column;
+                padding: 24px;
+                transition: left 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-content.active {
+                left: 0;
+            }
+            
+            .nav-stats {
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
+            }
+            
+            .app-container {
+                grid-template-columns: 1fr;
+                grid-template-areas: "main-content";
+            }
+            
+            .left-sidebar,
+            .right-sidebar {
+                position: fixed;
+                top: 64px;
+                height: calc(100vh - 64px);
+                z-index: 90;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .left-sidebar {
+                left: 0;
+                width: 280px;
+            }
+            
+            .left-sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .right-sidebar {
+                right: 0;
+                width: 300px;
+                transform: translateX(100%);
+            }
+            
+            .right-sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .sidebar-toggle-left,
+            .sidebar-toggle-right {
+                display: flex;
+            }
+            
             .patterns-grid {
                 grid-template-columns: 1fr;
             }
             
-            /* Mobile expandable cards - full width is already 100% in single column */
             .pattern-card.expanded-full-width {
                 grid-column: 1;
                 width: 100%;
+            }
+
+            .top-controls {
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
 
             .footer-content {
@@ -1151,7 +1529,6 @@
                 width: calc(100% - 32px);
             }
             
-            /* Video modal mobile responsive */
             #videoModal .modal-content {
                 max-width: 95vw;
                 margin: var(--space-8);
@@ -1185,10 +1562,36 @@
             .calendar-heatmap {
                 grid-template-columns: repeat(26, 1fr);
             }
+            
+            .problem-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .company-badges {
+                width: 100%;
+            }
+            
+            .video-btn,
+            .solve-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .company-badge {
+                font-size: 0.7rem;
+                padding: 2px 6px;
+                margin: 1px;
+            }
+            
+            .company-badges {
+                gap: 2px;
+                margin: 6px 0;
+            }
         }
 
         @media (max-width: 480px) {
-            .main-container {
+            .main-content {
                 padding: var(--space-16);
             }
 
@@ -1200,12 +1603,8 @@
                 padding: var(--space-20);
             }
 
-            .header-stats {
+            .nav-stats {
                 display: none;
-            }
-
-            .search-input {
-                width: 150px;
             }
         }
 
@@ -1369,6 +1768,130 @@
             }
         }
 
+        /* Modern Quick Stats Styles */
+        .quick-stats-section {
+            margin-bottom: 24px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .stat-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .stat-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+
+        .stat-content {
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-top: 2px;
+        }
+
+        /* Fire icon styles for streak display */
+        .streak-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .streak-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .fire-icon {
+            animation: flicker 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 4px rgba(250, 112, 154, 0.3));
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.85;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Dark mode - fire icon stays vibrant */
+        .dark-mode .fire-icon {
+            filter: brightness(1.1) drop-shadow(0 0 6px rgba(250, 112, 154, 0.4));
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .fire-icon {
+                filter: brightness(1.1) drop-shadow(0 0 6px rgba(250, 112, 154, 0.4));
+            }
+        }
+
+        /* Streak container styling */
+        .stat-value-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .fire-icon-inline {
+            vertical-align: middle;
+            animation: flicker 2s ease-in-out infinite;
+        }
+
+        .streak-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .fire-icon {
+            flex-shrink: 0;
+        }
+
         /* Mobile responsive company badges */
         @media (max-width: 768px) {
             .company-badge {
@@ -1386,6 +1909,10 @@
             .solve-btn {
                 padding: 6px 12px;
                 font-size: 0.75rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1637,109 +2164,300 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">DS</div>
-                <span>DSA Pattern Master</span>
-            </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#">Patterns</a></li>
-                    <li><a href="#">Progress</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-            <div class="header-center">
-                <div class="search-container">
-                    <div class="search-icon">🔍</div>
-                    <input type="text" class="search-input" placeholder="Search patterns or problems..." id="searchInput">
-                </div>
-                <div class="header-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" id="totalSolved">0</div>
-                        <div class="stat-label">Solved</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="currentStreak">0</div>
-                        <div class="stat-label">Streak</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="totalBadges">0</div>
-                        <div class="stat-label">Badges</div>
-                    </div>
-                </div>
-                <button class="theme-toggle" id="themeToggle">🌙</button>
+    <!-- Responsive Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#" class="logo">
+                    <div class="logo-icon">DS</div>
+                    <span>DSA Pattern Pro</span>
+                </a>
             </div>
-            <div class="user-avatar">JD</div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav-content">
+                <div class="nav-stats">
+                    <span class="stat-item">
+                        <strong id="totalSolved">141</strong> Problems
+                    </span>
+                    <span class="stat-item">
+                        <strong id="currentStreak">0</strong> Solved
+                    </span>
+                    <span class="stat-item streak-item">
+                        <strong id="navStreakCount">0</strong>
+                        <svg class="fire-icon" viewBox="0 0 24 24" width="18" height="18">
+                            <defs>
+                                <linearGradient id="fireGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FA709A;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FEE140;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#fireGrad)" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+                        </svg>
+                        <span class="stat-label">Day Streak</span>
+                    </span>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">
+                        <svg id="darkModeIcon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.06 7 9.54 0 4.48-2.94 8.27-7 9.54.95.3 1.95.46 3 .46 5.52 0 10-4.48 10-10S14.52 2 9 2z"/>
+                        </svg>
+                    </button>
+                    <button class="profile-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
-    <main class="main-container">
-        <!-- Left Sidebar -->
+    <div class="app-container">
+        <!-- Mobile Sidebar Toggle Buttons -->
+        <button class="sidebar-toggle-left" onclick="toggleLeftSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/>
+            </svg>
+        </button>
+        
+        <button class="sidebar-toggle-right" onclick="toggleRightSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 5-5v10z"/>
+            </svg>
+        </button>
+        <!-- Responsive Left Sidebar -->
         <aside class="left-sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title">🎯 Study Roadmap</div>
-                <div class="roadmap-selector" id="roadmapSelector">
-                    <div class="roadmap-option active" data-roadmap="beginner">
-                        <div style="font-weight: 600;">Beginner</div>
-                        <div style="font-size: 12px; color: var(--color-text-secondary);">12 weeks</div>
+            <div class="topics-section">
+                <h3 class="section-title">TOPICS</h3>
+                <div class="topic-list">
+                    <div class="topic-item active" onclick="filterByTopic('all')">
+                        <div class="topic-info">
+                            <span class="topic-name">All Topics</span>
+                            <span class="topic-progress">141/141</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
                     </div>
-                    <div class="roadmap-option" data-roadmap="intermediate">
-                        <div style="font-weight: 600;">Intermediate</div>
-                        <div style="font-size: 12px; color: var(--color-text-secondary);">8 weeks</div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('arrays')">
+                        <div class="topic-info">
+                            <span class="topic-name">Arrays</span>
+                            <span class="topic-progress">5/11</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
                     </div>
-                    <div class="roadmap-option" data-roadmap="interview">
-                        <div style="font-weight: 600;">Interview Prep</div>
-                        <div style="font-size: 12px; color: var(--color-text-secondary);">4 weeks</div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('voting')">
+                        <div class="topic-info">
+                            <span class="topic-name">Voting Algorithm</span>
+                            <span class="topic-progress">1/2</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('hashing')">
+                        <div class="topic-info">
+                            <span class="topic-name">Hashing</span>
+                            <span class="topic-progress">3/6</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('binary-search')">
+                        <div class="topic-info">
+                            <span class="topic-name">Binary Search</span>
+                            <span class="topic-progress">7/11</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 64%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('recursion')">
+                        <div class="topic-info">
+                            <span class="topic-name">Recursion</span>
+                            <span class="topic-progress">2/3</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 67%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('backtracking')">
+                        <div class="topic-info">
+                            <span class="topic-name">Backtracking</span>
+                            <span class="topic-progress">1/2</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('linkedlist')">
+                        <div class="topic-info">
+                            <span class="topic-name">LinkedList</span>
+                            <span class="topic-progress">6/9</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 67%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('greedy')">
+                        <div class="topic-info">
+                            <span class="topic-name">Greedy</span>
+                            <span class="topic-progress">3/5</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('sliding-window')">
+                        <div class="topic-info">
+                            <span class="topic-name">Sliding Window</span>
+                            <span class="topic-progress">4/8</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('stack-queue')">
+                        <div class="topic-info">
+                            <span class="topic-name">Stack/Queue</span>
+                            <span class="topic-progress">4/6</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 67%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('binary-tree')">
+                        <div class="topic-info">
+                            <span class="topic-name">Binary Tree</span>
+                            <span class="topic-progress">8/13</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 62%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('binary-search-tree')">
+                        <div class="topic-info">
+                            <span class="topic-name">Binary Search Tree</span>
+                            <span class="topic-progress">4/6</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 67%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('heaps')">
+                        <div class="topic-info">
+                            <span class="topic-name">Heaps</span>
+                            <span class="topic-progress">3/6</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('graphs')">
+                        <div class="topic-info">
+                            <span class="topic-name">Graphs</span>
+                            <span class="topic-progress">15/25</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('dp')">
+                        <div class="topic-info">
+                            <span class="topic-name">Dynamic Programming</span>
+                            <span class="topic-progress">15/23</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-item" onclick="filterByTopic('tries')">
+                        <div class="topic-info">
+                            <span class="topic-name">Tries</span>
+                            <span class="topic-progress">3/5</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">📊 Pattern Progress</div>
-                <div id="patternProgress">
-                    <!-- Pattern progress will be generated by JavaScript -->
+            
+            <!-- Keep other sections -->
+            <div class="badges-section">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                    <div class="badge-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                    <h3 class="section-title" style="margin: 0;">BADGES</h3>
+                </div>
+                <div class="badges-mini" id="badgesMini">
+                    <!-- Mini badges will be generated by JavaScript -->
                 </div>
             </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">🔍 Filters</div>
-                <div class="filters" style="flex-direction: column; gap: 8px;">
-                    <button class="filter-button active" data-category="all" style="justify-content: flex-start;">All Patterns</button>
-                    <button class="filter-button" data-category="arrays" style="justify-content: flex-start;">Arrays</button>
-                    <button class="filter-button" data-category="voting" style="justify-content: flex-start;">Voting Algorithm</button>
-                    <button class="filter-button" data-category="hashing" style="justify-content: flex-start;">Hashing</button>
-                    <button class="filter-button" data-category="binary-search" style="justify-content: flex-start;">Binary Search</button>
-                    <button class="filter-button" data-category="recursion" style="justify-content: flex-start;">Recursion</button>
-                    <button class="filter-button" data-category="backtracking" style="justify-content: flex-start;">Backtracking</button>
-                    <button class="filter-button" data-category="linkedlist" style="justify-content: flex-start;">LinkedList</button>
-                    <button class="filter-button" data-category="greedy" style="justify-content: flex-start;">Greedy</button>
-                    <button class="filter-button" data-category="sliding-window" style="justify-content: flex-start;">Sliding Window</button>
-                    <button class="filter-button" data-category="stack-queue" style="justify-content: flex-start;">Stack/Queue</button>
-                    <button class="filter-button" data-category="binary-tree" style="justify-content: flex-start;">Binary Tree</button>
-                    <button class="filter-button" data-category="binary-search-tree" style="justify-content: flex-start;">Binary Search Tree</button>
-                    <button class="filter-button" data-category="heaps" style="justify-content: flex-start;">Heaps</button>
-                    <button class="filter-button" data-category="graphs" style="justify-content: flex-start;">Graphs</button>
-                    <button class="filter-button" data-category="dp" style="justify-content: flex-start;">Dynamic Programming</button>
-                    <button class="filter-button" data-category="tries" style="justify-content: flex-start;">Tries</button>
+            
+            <div class="calendar-section">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                    <div class="badge-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/></svg></div>
+                    <h3 class="section-title" style="margin: 0;">STREAK</h3>
+                </div>
+                <div class="streak-display">
+                    <div class="current-streak" style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                        <span class="streak-number" id="streakNumber">0</span>
+                        <svg class="fire-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <defs>
+                                <linearGradient id="fireStreakSidebar" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FA709A;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FEE140;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#fireStreakSidebar)" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+                        </svg>
+                        <div>
+                            <span class="streak-label">day streak</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
         </aside>
 
-        <!-- Main Content Area -->
+        <!-- Responsive Main Content Area -->
         <div class="main-content">
             <!-- Controls Section - Daily Goal & Company Filter -->
             <div class="controls-section">
                 <div class="top-controls">
                     <section class="daily-goal-widget">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                            <h3 style="margin: 0;">📅 Daily Goal</h3>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div class="goal-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                                <h3 style="margin: 0;">Daily Goal</h3>
+                            </div>
                             <div style="display: flex; gap: 8px;">
                                 <button class="btn btn-secondary" onclick="setDailyGoal(1)">1</button>
                                 <button class="btn btn-secondary" onclick="setDailyGoal(3)">3</button>
@@ -1837,7 +2555,10 @@
         <!-- Right Sidebar -->
         <aside class="right-sidebar">
             <div class="sidebar-section">
-                <div class="sidebar-title">📈 Activity</div>
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                    <div class="badge-icon" style="background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v2H5V5zm0 4h4v2H5V9zm0 4h7v2H5v-2zm0 4h10v2H5v-2zm12-4h2v6h-2v-6z"/></svg></div>
+                    <div class="sidebar-title" style="margin: 0; color: var(--color-text);">Activity</div>
+                </div>
                 <div class="calendar-heatmap" id="calendarHeatmap">
                     <!-- Calendar will be generated by JavaScript -->
                 </div>
@@ -1847,39 +2568,85 @@
             </div>
 
             <div class="sidebar-section">
-                <div class="sidebar-title">🏆 Achievements</div>
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                    <div class="badge-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                    <div class="sidebar-title" style="margin: 0; color: var(--color-text);">Achievements</div>
+                </div>
                 <div class="badges-container" id="badgesContainer">
                     <!-- Badges will be generated by JavaScript -->
                 </div>
             </div>
 
-            <div class="sidebar-section">
-                <div class="sidebar-title">📊 Quick Stats</div>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>Total Problems:</span>
-                        <strong id="totalProblems">0</strong>
+            <div class="quick-stats-section">
+                <h3 class="section-title">QUICK STATS</h3>
+                
+                <div class="stats-grid">
+                    <!-- Total Problems -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="totalProblems">141</div>
+                            <div class="stat-label">Total Problems</div>
+                        </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>Completion Rate:</span>
-                        <strong id="completionRate">0%</strong>
+                    
+                    <!-- Solved -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="solvedCount">0</div>
+                            <div class="stat-label">Solved</div>
+                        </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>Avg. Time:</span>
-                        <strong id="avgTime">--</strong>
+                    
+                    <!-- Success Rate -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="successRate">0%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>Longest Streak:</span>
-                        <strong id="longestStreak">0</strong>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>Videos Watched:</span>
-                        <strong id="videosWatched">0</strong>
+                    
+                    <!-- Current Streak -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value-container">
+                                <div class="stat-value" id="currentStreakStat">0</div>
+                                <svg class="fire-icon-inline" viewBox="0 0 24 24" width="20" height="20">
+                                    <defs>
+                                        <linearGradient id="fireInlineQuickStats" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#FA709A;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#FEE140;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path fill="url(#fireInlineQuickStats)" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Day Streak</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </aside>
-    </main>
+    </div>
 
     <!-- Problem Detail Modal -->
     <div id="problemModal" class="modal">
@@ -2152,7 +2919,7 @@
         const dsaPatterns = {
             arrays: {
                 name: "Arrays",
-                icon: "📊",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></div>`,
                 background: "var(--color-bg-1)",
                 description: "Master array manipulation, two pointers, sliding window, and sorting techniques.",
                 problems: [
@@ -2171,7 +2938,7 @@
             },
             voting: {
                 name: "Voting Algorithm",
-                icon: "🗳️",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>`,
                 background: "var(--color-bg-2)",
                 description: "Boyer-Moore majority vote algorithm for finding majority elements.",
                 problems: [
@@ -2181,7 +2948,7 @@
             },
             hashing: {
                 name: "Hashing",
-                icon: "🔐",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M15 21h-2v-3h-2v3H9v-3H7v-2h2V7H7V5h2V2h2v3h2V2h2v3h2v2h-2v9h2v2h-2v3zM11 7v9h2V7h-2z"/></svg></div>`,
                 background: "var(--color-bg-3)",
                 description: "Hash tables, frequency counting, and prefix sum with hashmaps.",
                 problems: [
@@ -2195,7 +2962,7 @@
             },
             "binary-search": {
                 name: "Binary Search",
-                icon: "🔍",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>`,
                 background: "var(--color-bg-4)",
                 description: "Binary search variations including bounds, search in rotated arrays, and search on answers.",
                 problems: [
@@ -2214,7 +2981,7 @@
             },
             recursion: {
                 name: "Recursion",
-                icon: "🔄",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg></div>`,
                 background: "var(--color-bg-5)",
                 description: "Recursive problem solving focusing on subsequence generation.",
                 problems: [
@@ -2225,7 +2992,7 @@
             },
             backtracking: {
                 name: "Backtracking",
-                icon: "↩️",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M9 19l1.41-1.41L5.83 13H20v-2H5.83l4.59-4.59L9 5l-7 7 7 7z"/></svg></div>`,
                 background: "var(--color-bg-6)",
                 description: "Advanced backtracking problems with complex constraints.",
                 problems: [
@@ -2235,7 +3002,7 @@
             },
             linkedlist: {
                 name: "LinkedList",
-                icon: "🔗",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm2 4v-2H3c0 1.1.89 2 2 2zM3 9h2V7H3v2zm12 12h2v-2h-2v2zm4-18H9c-1.11 0-2 .9-2 2v10c0 1.1.89 2 2 2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12H9V5h10v10zm-8 6h2v-2h-2v2zm-4 0h2v-2H7v2z"/></svg></div>`,
                 background: "var(--color-bg-7)",
                 description: "Linked list manipulation using various pointer techniques.",
                 problems: [
@@ -2252,7 +3019,7 @@
             },
             greedy: {
                 name: "Greedy Algorithms",
-                icon: "💰",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>`,
                 background: "var(--color-bg-8)",
                 description: "Greedy algorithms for interval scheduling and optimization problems.",
                 problems: [
@@ -2265,7 +3032,7 @@
             },
             "sliding-window": {
                 name: "Sliding Window",
-                icon: "🪟",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M4 6v12h16V6H4zm14 10H6V8h12v8z"/><path d="M8 10h8v2H8zm0 3h6v1H8z"/></svg></div>`,
                 background: "var(--color-bg-1)",
                 description: "Sliding window technique for subarray and substring problems.",
                 problems: [
@@ -2281,7 +3048,7 @@
             },
             "stack-queue": {
                 name: "Stack/Queue",
-                icon: "📚",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"/></svg></div>`,
                 background: "var(--color-bg-2)",
                 description: "Stack and queue data structures with monotonic stack patterns.",
                 problems: [
@@ -2295,7 +3062,7 @@
             },
             "binary-tree": {
                 name: "Binary Tree",
-                icon: "🌳",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>`,
                 background: "var(--color-bg-3)",
                 description: "Binary tree operations including traversals, views, and construction.",
                 problems: [
@@ -2316,7 +3083,7 @@
             },
             "binary-search-tree": {
                 name: "Binary Search Tree",
-                icon: "🔍🌳",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>`,
                 background: "var(--color-bg-4)",
                 description: "Binary search tree operations and validations.",
                 problems: [
@@ -2330,7 +3097,7 @@
             },
             heaps: {
                 name: "Heaps",
-                icon: "⛰️",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>`,
                 background: "var(--color-bg-5)",
                 description: "Heap data structure for priority queue operations and kth element problems.",
                 problems: [
@@ -2344,7 +3111,7 @@
             },
             graphs: {
                 name: "Graphs",
-                icon: "🕸️",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>`,
                 background: "var(--color-bg-6)",
                 description: "Graph algorithms including traversals, cycle detection, shortest paths, and MST.",
                 problems: [
@@ -2377,7 +3144,7 @@
             },
             dp: {
                 name: "Dynamic Programming",
-                icon: "⚡",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>`,
                 background: "var(--color-bg-7)",
                 description: "Dynamic programming problems across various patterns and dimensions.",
                 problems: [
@@ -2408,7 +3175,7 @@
             },
             tries: {
                 name: "Tries",
-                icon: "🌲",
+                icon: `<div class="topic-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>`,
                 background: "var(--color-bg-8)",
                 description: "Trie data structure for efficient string operations and pattern matching.",
                 problems: [
@@ -2459,9 +3226,11 @@
             renderPatterns();
             renderCalendarHeatmap();
             renderBadges();
-            renderPatternProgress();
+            renderBadgesMini();
+            updateStreakDisplay();
             updateStats();
             setupEventListeners();
+            initResponsive();
         }
 
         // Load user data (simulate persistent storage but use variables due to sandbox)
@@ -2819,7 +3588,7 @@
         // Setup event listeners
         function setupEventListeners() {
             // Theme toggle
-            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            document.getElementById('themeToggle').addEventListener('click', toggleDarkMode);
             
             // Search functionality
             document.getElementById('searchInput').addEventListener('input', handleSearch);
@@ -2849,23 +3618,35 @@
                 });
             });
 
-            // Filter buttons
-            document.querySelectorAll('.filter-button').forEach(button => {
-                button.addEventListener('click', () => {
-                    document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    currentFilter = button.dataset.category;
+            // Topic filter items (combined progress + filter)
+            document.querySelectorAll('.topic-item').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
                     
-                    // Reset all expansions when filter changes
-                    expandedCards.clear();
+                    // Get the topic key from the onclick attribute or data
+                    const topicName = item.querySelector('.topic-name').textContent;
+                    let topicKey = 'all';
                     
-                    // ISSUE 1 FIX: Auto-expand cards when specific filter is selected
-                    // This maintains the original behavior for specific filters
-                    if (currentFilter !== 'all') {
-                        expandedCards.add(currentFilter);
-                    }
+                    // Map topic names to keys
+                    if (topicName === 'All Topics') topicKey = 'all';
+                    else if (topicName === 'Arrays') topicKey = 'arrays';
+                    else if (topicName === 'Voting Algorithm') topicKey = 'voting';
+                    else if (topicName === 'Hashing') topicKey = 'hashing';
+                    else if (topicName === 'Binary Search') topicKey = 'binary-search';
+                    else if (topicName === 'Recursion') topicKey = 'recursion';
+                    else if (topicName === 'Backtracking') topicKey = 'backtracking';
+                    else if (topicName === 'LinkedList') topicKey = 'linkedlist';
+                    else if (topicName === 'Greedy') topicKey = 'greedy';
+                    else if (topicName === 'Sliding Window') topicKey = 'sliding-window';
+                    else if (topicName === 'Stack/Queue') topicKey = 'stack-queue';
+                    else if (topicName === 'Binary Tree') topicKey = 'binary-tree';
+                    else if (topicName === 'Binary Search Tree') topicKey = 'binary-search-tree';
+                    else if (topicName === 'Heaps') topicKey = 'heaps';
+                    else if (topicName === 'Graphs') topicKey = 'graphs';
+                    else if (topicName === 'Dynamic Programming') topicKey = 'dp';
+                    else if (topicName === 'Tries') topicKey = 'tries';
                     
-                    renderPatterns();
+                    filterByTopic(topicKey);
                 });
             });
 
@@ -3096,33 +3877,113 @@
             }
         }
 
-        // New functionality
-        function toggleTheme() {
-            userData.darkMode = !userData.darkMode;
-            
-            // Apply theme change immediately for smooth transition
-            requestAnimationFrame(() => {
-                document.documentElement.classList.toggle('dark-mode', userData.darkMode);
-                document.body.classList.toggle('dark-mode', userData.darkMode);
-                document.getElementById('themeToggle').textContent = userData.darkMode ? '☀️' : '🌙';
-                
-                // Update all elements that need theme updates
-                const elementsToUpdate = [
-                    '.header',
-                    '.pattern-card',
-                    '.left-sidebar',
-                    '.right-sidebar',
-                    '.modal-content',
-                    '.problem-item'
-                ];
-                
-                elementsToUpdate.forEach(selector => {
-                    document.querySelectorAll(selector).forEach(element => {
-                        element.style.transition = 'all 0.3s ease';
-                    });
-                });
-            });
+        // Mobile sidebar functions
+        function toggleLeftSidebar() {
+            const sidebar = document.querySelector('.left-sidebar');
+            sidebar.classList.toggle('active');
         }
+
+        function toggleRightSidebar() {
+            const sidebar = document.querySelector('.right-sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function toggleMobileMenu() {
+            const navContent = document.querySelector('.nav-content');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            navContent.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Combined topic filter function
+        function filterByTopic(topicKey) {
+            // Update active topic item
+            document.querySelectorAll('.topic-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Find and activate clicked topic
+            const clickedItem = event.target.closest('.topic-item');
+            if (clickedItem) {
+                clickedItem.classList.add('active');
+            }
+            
+            // Apply filter
+            currentFilter = topicKey;
+            
+            // Reset all expansions when filter changes
+            expandedCards.clear();
+            
+            // Auto-expand cards when specific filter is selected
+            if (currentFilter !== 'all') {
+                expandedCards.add(currentFilter);
+            }
+            
+            renderPatterns();
+        }
+
+        // Close sidebars when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('.left-sidebar') && !e.target.closest('.sidebar-toggle-left')) {
+                    document.querySelector('.left-sidebar')?.classList.remove('active');
+                }
+                if (!e.target.closest('.right-sidebar') && !e.target.closest('.sidebar-toggle-right')) {
+                    document.querySelector('.right-sidebar')?.classList.remove('active');
+                }
+                if (!e.target.closest('.nav-content') && !e.target.closest('.mobile-menu-toggle')) {
+                    document.querySelector('.nav-content')?.classList.remove('active');
+                }
+            }
+        });
+
+        // Dark Mode Toggle - COMPLETE WORKING VERSION
+        (function() {
+            'use strict';
+            
+            // Check for saved preference, default to light mode
+            const savedTheme = 'light'; // Simulate localStorage in sandbox
+            
+            // Apply theme immediately on page load (before DOM ready)
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+            
+            // Function to toggle dark mode
+            window.toggleDarkMode = function() {
+                const html = document.documentElement;
+                const isDark = html.classList.toggle('dark-mode');
+                
+                // Update userData
+                userData.darkMode = isDark;
+                
+                // Update icon
+                updateIcon(isDark);
+            };
+            
+            // Function to update icon
+            function updateIcon(isDark) {
+                const icon = document.getElementById('darkModeIcon');
+                if (!icon) return;
+                
+                if (isDark) {
+                    // Sun icon (for switching to light)
+                    icon.innerHTML = `
+                        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+                    `;
+                } else {
+                    // Moon icon (for switching to dark)
+                    icon.innerHTML = `
+                        <path d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.06 7 9.54 0 4.48-2.94 8.27-7 9.54.95.3 1.95.46 3 .46 5.52 0 10-4.48 10-10S14.52 2 9 2z"/>
+                    `;
+                }
+            }
+            
+            // Initialize icon on load
+            document.addEventListener('DOMContentLoaded', function() {
+                updateIcon(savedTheme === 'dark');
+            });
+        })();
 
         function handleSearch(e) {
             const query = e.target.value.toLowerCase();
@@ -3213,15 +4074,17 @@
         function updateStats() {
             document.getElementById('totalSolved').textContent = userData.solvedProblems.size;
             document.getElementById('currentStreak').textContent = userData.currentStreak;
+            document.getElementById('navStreakCount').textContent = userData.currentStreak;
             
             const totalProblems = Object.values(dsaPatterns).reduce((sum, pattern) => sum + pattern.problems.length, 0);
             document.getElementById('totalProblems').textContent = totalProblems;
             
             const completionRate = totalProblems > 0 ? Math.round((userData.solvedProblems.size / totalProblems) * 100) : 0;
-            document.getElementById('completionRate').textContent = `${completionRate}%`;
             
-            document.getElementById('longestStreak').textContent = userData.longestStreak;
-            document.getElementById('videosWatched').textContent = userData.videosWatched.size;
+            // Update new Quick Stats elements
+            document.getElementById('solvedCount').textContent = userData.solvedProblems.size;
+            document.getElementById('successRate').textContent = `${completionRate}%`;
+            document.getElementById('currentStreakStat').textContent = userData.currentStreak;
             
             // Update daily goal progress
             const todaySolved = 1; // Simulate today's progress
@@ -3238,6 +4101,10 @@
             });
             
             document.getElementById('totalBadges').textContent = userData.badges.size;
+            
+            // Update mini badges
+            renderBadgesMini();
+            updateStreakDisplay();
         }
 
         function renderBadges() {
@@ -3318,32 +4185,40 @@
             }
         }
 
-        function renderPatternProgress() {
-            const container = document.getElementById('patternProgress');
+        function renderBadgesMini() {
+            const container = document.getElementById('badgesMini');
+            if (!container) return;
+            
             container.innerHTML = '';
             
-            Object.entries(dsaPatterns).forEach(([key, pattern]) => {
-                const total = pattern.problems.length;
-                const solved = pattern.problems.filter(p => userData.solvedProblems.has(p.name)).length;
-                const percentage = total > 0 ? Math.round((solved / total) * 100) : 0;
-                
-                const progressEl = document.createElement('div');
-                progressEl.style.marginBottom = '12px';
-                progressEl.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                        <span style="font-size: 14px; font-weight: 500;">${pattern.name}</span>
-                        <span style="font-size: 12px; color: var(--color-text-secondary);">${solved}/${total}</span>
-                    </div>
-                    <div class="progress-bar" style="height: 6px;">
-                        <div class="progress-fill" style="width: ${percentage}%;"></div>
-                    </div>
-                `;
-                container.appendChild(progressEl);
+            Object.entries(badges).forEach(([key, badge]) => {
+                const badgeEl = document.createElement('div');
+                badgeEl.className = `badge-mini ${userData.badges.has(key) ? 'earned' : ''}`;
+                badgeEl.innerHTML = badge.icon;
+                badgeEl.title = badge.name;
+                container.appendChild(badgeEl);
             });
+        }
+
+        function updateStreakDisplay() {
+            const streakNumber = document.getElementById('streakNumber');
+            if (streakNumber) {
+                streakNumber.textContent = userData.currentStreak;
+            }
         }
 
         // Initialize app when DOM is loaded
         document.addEventListener('DOMContentLoaded', init);
+        
+        // Handle window resize for responsive behavior
+        window.addEventListener('resize', () => {
+            // Close mobile menu and sidebars on resize to desktop
+            if (window.innerWidth > 768) {
+                document.querySelector('.nav-content')?.classList.remove('active');
+                document.querySelector('.left-sidebar')?.classList.remove('active');
+                document.querySelector('.right-sidebar')?.classList.remove('active');
+            }
+        });
 
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
@@ -3400,6 +4275,20 @@
         // Add some sample video watches for demo
         userData.videosWatched.add('Two Sum');
         userData.videosWatched.add('Valid Anagram');
+        
+        // Initialize responsive behavior
+        function initResponsive() {
+            // Set initial theme icon
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.innerHTML = userData.darkMode ? 
+                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/><path d="m12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>' :
+                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+            }
+        }
+        
+        // Call responsive init
+        initResponsive();
         
         // Debug function to test video ID extraction
         function testVideoExtraction() {
