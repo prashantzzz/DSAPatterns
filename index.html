@@ -420,18 +420,26 @@
             min-height: calc(100vh - 64px);
         }
 
+        /* Sticky Sidebars */
         .left-sidebar {
             grid-area: left-sidebar;
-            background: var(--color-surface);
+            background: var(--sidebar-bg);
             padding: 24px;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: sticky;
+            top: 70px;
+            align-self: flex-start;
+            max-height: calc(100vh - 90px);
             overflow-y: auto;
-            border-right: 1px solid var(--color-border);
         }
 
         .main-content {
             grid-area: main-content;
             padding: 24px;
-            overflow-y: auto;
+            overflow-y: visible;
             display: flex;
             flex-direction: column;
             gap: var(--space-24);
@@ -441,8 +449,12 @@
             grid-area: right-sidebar;
             background: var(--color-surface);
             padding: 24px;
-            overflow-y: auto;
             border-left: 1px solid var(--color-border);
+            position: sticky;
+            top: 70px;
+            align-self: flex-start;
+            max-height: calc(100vh - 90px);
+            overflow-y: auto;
         }
 
         /* Mobile sidebar toggle buttons */
@@ -480,7 +492,10 @@
 
         /* Combined Topic Progress + Filter Styles */
         .topics-section {
-            margin-bottom: var(--space-24);
+            margin-bottom: 0; /* Remove margin since we're using gap */
+            display: flex;
+            flex-direction: column;
+            max-height: 65vh; /* Fixed maximum height - 65% of viewport */
         }
 
         .section-title {
@@ -490,12 +505,61 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 16px;
+            padding: 0 4px;
+            flex-shrink: 0; /* Prevent title from scrolling */
         }
 
+        /* Topic List - Scrollable */
         .topic-list {
             display: flex;
             flex-direction: column;
             gap: 8px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            max-height: calc(65vh - 40px); /* Full height minus title */
+            padding-right: 4px; /* Space for scrollbar */
+            scrollbar-width: thin; /* Firefox: thin scrollbar */
+            scrollbar-color: var(--color-border) transparent; /* Firefox: scrollbar colors */
+            scroll-behavior: smooth; /* Smooth scroll behavior */
+        }
+
+        /* Webkit Scrollbar Styling (Chrome, Safari, Edge) */
+        .topic-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .topic-list::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 3px;
+        }
+
+        .topic-list::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: 3px;
+            transition: background 0.3s ease;
+        }
+
+        .topic-list::-webkit-scrollbar-thumb:hover {
+            background: var(--color-text-secondary);
+        }
+
+        /* Dark mode scrollbar */
+        .dark-mode .topic-list::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .dark-mode .topic-list::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .topic-list::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            
+            .topic-list::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 255, 255, 0.3);
+            }
         }
 
         .topic-item {
@@ -550,11 +614,7 @@
             transition: width 0.3s ease;
         }
 
-        /* Additional sidebar sections */
-        .badges-section,
-        .calendar-section {
-            margin-bottom: var(--space-24);
-        }
+
 
         .badges-mini {
             display: flex;
@@ -1298,10 +1358,75 @@
         .calendar-day.active-3 { background: rgba(33, 128, 141, 0.7); }
         .calendar-day.active-4 { background: rgba(33, 128, 141, 1); }
 
+        /* Modern Achievement Icons with Gradient Backgrounds */
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .achievement-info {
+            flex: 1;
+        }
+
+        .achievement-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 2px;
+        }
+
+        .achievement-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Locked achievements */
+        .achievement-item.locked {
+            opacity: 0.5;
+        }
+
+        .achievement-item.locked .achievement-icon {
+            background: var(--border-color) !important;
+            box-shadow: none;
+        }
+
+        /* Dark mode */
+        .dark-mode .achievement-item {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
+        .dark-mode .achievement-icon {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
         .badges-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-8);
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
 
         .badge {
@@ -1575,7 +1700,26 @@
             .video-btn,
             .solve-btn {
                 flex: 1;
-                min-width: 120px;
+                min-width: 100px;
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+            
+            .checkbox-container {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .checkbox-container .checkmark {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .checkbox-container .checkmark:after {
+                left: 6px;
+                top: 2px;
+                width: 5px;
+                height: 9px;
             }
             
             .company-badge {
@@ -1626,78 +1770,179 @@
             display: block;
         }
 
-        /* Company Badge Styles */
+        /* Company Badge Styles - Small and Uncolored */
         .company-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px;
-            margin: 8px 0;
+            gap: 3px;
+            margin: 4px 0;
         }
 
         .company-badge {
             display: inline-block;
-            padding: 3px 8px;
-            margin: 2px;
-            color: white;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2px 6px;
+            margin: 2px 3px 2px 0;
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
         .company-badge:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            background: var(--hover-bg);
+            border-color: var(--text-secondary);
         }
 
-        /* Company-specific colors */
-        .company-badge.amazon { background: linear-gradient(135deg, #FF9900 0%, #FF6600 100%); }
-        .company-badge.google { background: linear-gradient(135deg, #4285F4 0%, #34A853 100%); }
-        .company-badge.microsoft { background: linear-gradient(135deg, #00A4EF 0%, #0078D4 100%); }
-        .company-badge.facebook { background: linear-gradient(135deg, #1877F2 0%, #0A66C2 100%); }
-        .company-badge.apple { background: linear-gradient(135deg, #555555 0%, #333333 100%); }
-        .company-badge.meta { background: linear-gradient(135deg, #1877F2 0%, #0A66C2 100%); }
-        .company-badge.linkedin { background: linear-gradient(135deg, #0077B5 0%, #005885 100%); }
-        .company-badge.bloomberg { background: linear-gradient(135deg, #000000 0%, #333333 100%); }
-        .company-badge.goldman-sachs { background: linear-gradient(135deg, #002A5C 0%, #1A4B73 100%); }
-        .company-badge.adobe { background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); }
-        .company-badge.oracle { background: linear-gradient(135deg, #F80000 0%, #CC0000 100%); }
-        .company-badge.uber { background: linear-gradient(135deg, #000000 0%, #333333 100%); }
-        .company-badge.flipkart { background: linear-gradient(135deg, #2874F0 0%, #1F5BC7 100%); }
+        /* Dark mode company badges */
+        .dark-mode .company-badge {
+            color: #94a3b8;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
 
-        /* Modern video and solve button styles */
+        .dark-mode .company-badge:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Remove all company-specific colors - all badges look the same */
+        .company-badge.amazon,
+        .company-badge.google,
+        .company-badge.microsoft,
+        .company-badge.facebook,
+        .company-badge.apple,
+        .company-badge.meta,
+        .company-badge.linkedin,
+        .company-badge.bloomberg,
+        .company-badge.goldman-sachs,
+        .company-badge.adobe,
+        .company-badge.oracle,
+        .company-badge.uber,
+        .company-badge.flipkart {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Checkbox Wrapper - Fixed Implementation */
+        .checkbox-wrapper {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            margin-right: 12px;
+        }
+
+        /* Hide native checkbox */
+        .problem-checkbox {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            cursor: pointer;
+        }
+
+        /* Custom Checkbox */
+        .checkbox-custom {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Hover */
+        .checkbox-wrapper:hover .checkbox-custom {
+            border-color: #56CCF2;
+            transform: scale(1.05);
+        }
+
+        /* Checked State - Blue Gradient */
+        .problem-checkbox:checked + .checkbox-custom {
+            background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);
+            border-color: #2F80ED;
+            box-shadow: 0 2px 6px rgba(47, 128, 237, 0.3);
+        }
+
+        /* Checkmark */
+        .checkbox-custom::after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Show checkmark when checked */
+        .problem-checkbox:checked + .checkbox-custom::after {
+            display: block;
+        }
+
+        /* Completed problem styling */
+        .problem-item.completed {
+            opacity: 0.6;
+        }
+
+        .problem-item.completed .problem-name {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+        }
+
+        /* Dark mode */
+        .dark-mode .checkbox-custom {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .dark-mode .checkbox-wrapper:hover .checkbox-custom {
+            border-color: #56CCF2;
+        }
+
+        /* Modern video and solve button styles - REDUCED SIZE */
         .video-btn {
-            padding: 8px 16px;
+            padding: 6px 12px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 
-                4px 4px 8px rgba(102, 126, 234, 0.3),
-                -2px -2px 8px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.25);
             position: relative;
+        }
+
+        .video-btn svg {
+            width: 14px;
+            height: 14px;
         }
 
         .video-btn::before {
             content: "▶";
-            font-size: 0.8rem;
+            font-size: 0.7rem;
         }
 
         .video-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 
-                6px 6px 12px rgba(102, 126, 234, 0.4),
-                -3px -3px 12px rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.35);
         }
 
         .video-btn:active {
@@ -1705,129 +1950,165 @@
         }
 
         .solve-btn {
-            padding: 8px 18px;
+            padding: 6px 14px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);
             color: white;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             transition: all 0.3s ease;
-            box-shadow: 
-                4px 4px 8px rgba(47, 128, 237, 0.3),
-                -2px -2px 8px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 6px rgba(47, 128, 237, 0.25);
             position: relative;
         }
 
+        /* Remove arrow from solve button */
         .solve-btn::after {
-            content: "→";
-            font-size: 1rem;
-            font-weight: bold;
+            display: none;
         }
 
         .solve-btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 
-                6px 6px 12px rgba(47, 128, 237, 0.4),
-                -3px -3px 12px rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px) scale(1.03);
+            box-shadow: 0 4px 10px rgba(47, 128, 237, 0.35);
         }
 
         .solve-btn:active {
             transform: translateY(0) scale(1);
         }
 
+        /* Dark mode checkbox adjustments */
+        body.dark-mode .checkmark {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        body.dark-mode .checkbox-container:hover .checkmark {
+            border-color: #56CCF2;
+        }
+
+        body.dark-mode .checkbox-container input:checked ~ .checkmark {
+            background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);
+            border-color: #2F80ED;
+            box-shadow: 0 2px 8px rgba(47, 128, 237, 0.4);
+        }
+
         /* Dark mode button adjustments */
         body.dark-mode .video-btn {
-            box-shadow: 
-                4px 4px 8px rgba(102, 126, 234, 0.4),
-                -2px -2px 8px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);
         }
 
         body.dark-mode .solve-btn {
-            box-shadow: 
-                4px 4px 8px rgba(47, 128, 237, 0.4),
-                -2px -2px 8px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 2px 6px rgba(47, 128, 237, 0.4);
         }
 
         @media (prefers-color-scheme: dark) {
+            .checkmark {
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+            
+            .checkbox-container:hover .checkmark {
+                border-color: #56CCF2;
+            }
+            
+            .checkbox-container input:checked ~ .checkmark {
+                background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);
+                border-color: #2F80ED;
+                box-shadow: 0 2px 8px rgba(47, 128, 237, 0.4);
+            }
+            
             .video-btn {
-                box-shadow: 
-                    4px 4px 8px rgba(102, 126, 234, 0.4),
-                    -2px -2px 8px rgba(255, 255, 255, 0.05);
+                box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);
             }
             
             .solve-btn {
-                box-shadow: 
-                    4px 4px 8px rgba(47, 128, 237, 0.4),
-                    -2px -2px 8px rgba(255, 255, 255, 0.05);
+                box-shadow: 0 2px 6px rgba(47, 128, 237, 0.4);
             }
         }
 
-        /* Modern Quick Stats Styles */
-        .quick-stats-section {
-            margin-bottom: 24px;
+        /* Quick Stats in Left Sidebar - Even More Compact */
+        .left-sidebar .quick-stats-section {
+            margin-top: 0;
+            padding: 0;
         }
 
-        .stats-grid {
+        .left-sidebar .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 6px; /* Reduced from 8px */
         }
 
-        .stat-card {
+        /* Even smaller stat cards */
+        .left-sidebar .stat-card {
+            padding: 6px; /* Reduced from 8px */
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px;
+            gap: 6px; /* Reduced from 8px */
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 6px; /* Reduced from 8px */
             transition: all 0.3s ease;
         }
 
-        .stat-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
+        .left-sidebar .stat-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06); /* Even softer */
         }
 
-        .dark-mode .stat-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        .stat-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+        /* Smaller icon container */
+        .left-sidebar .stat-icon {
+            width: 28px; /* Reduced from 32px */
+            height: 28px;
+            border-radius: 6px; /* Reduced from 8px */
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Softer shadow */
         }
 
-        .stat-content {
+        /* Smaller SVG icons */
+        .left-sidebar .stat-icon svg {
+            width: 14px; /* Reduced from 16px */
+            height: 14px;
+        }
+
+        /* Smaller text */
+        .left-sidebar .stat-content {
             flex: 1;
+            min-width: 0;
         }
 
-        .stat-value {
-            font-size: 1.25rem;
+        .left-sidebar .stat-value {
+            font-size: 0.9rem; /* Reduced from 1rem */
             font-weight: 700;
             color: var(--text-color);
             line-height: 1.2;
         }
 
-        .stat-label {
-            font-size: 0.7rem;
+        .left-sidebar .stat-label {
+            font-size: 0.55rem; /* Reduced from 0.6rem */
             font-weight: 600;
             color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.3px;
-            margin-top: 2px;
+            letter-spacing: 0.2px; /* Reduced */
+            margin-top: 1px;
+        }
+
+        /* Smaller fire icon in streak */
+        .left-sidebar .fire-icon-inline {
+            width: 12px; /* Reduced from 14px */
+            height: 12px;
+            margin-left: 2px;
+        }
+
+        .left-sidebar .stat-value-container {
+            display: flex;
+            align-items: center;
+            gap: 2px; /* Reduced gap */
         }
 
         /* Fire icon styles for streak display */
@@ -1911,8 +2192,17 @@
                 font-size: 0.75rem;
             }
             
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .left-sidebar .stats-grid {
+                grid-template-columns: 1fr; /* Stack on mobile */
+            }
+            
+            /* Mobile adjustments for topics section */
+            .topics-section {
+                max-height: 50vh; /* Smaller on mobile */
+            }
+            
+            .topic-list {
+                max-height: calc(50vh - 40px);
             }
         }
 
@@ -1952,40 +2242,53 @@
             margin-bottom: var(--space-24);
         }
 
+        /* Top Controls - Three Items Inline */
         .top-controls {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
             margin-bottom: 20px;
         }
 
-        .daily-goal-widget,
-        .company-filter-widget {
+        .controls-row {
             display: flex;
-            flex-direction: column;
-            min-height: 120px;
-            background: transparent;
-            box-shadow: none;
-            padding: 0;
+            align-items: flex-end;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .daily-goal-widget > label,
-        .company-filter-widget > label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--color-text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
+        /* Filter Wrappers (Company and Difficulty) */
+        .filter-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+            min-width: 180px;
+            max-width: 250px;
+        }
+
+        .company-filter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+            min-width: 180px;
+            max-width: 250px;
+        }
+
+        .difficulty-filter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+            min-width: 180px;
+            max-width: 250px;
         }
 
         .filter-label {
-            font-size: 0.85rem;
+            font-size: 0.75rem; /* Smaller label */
             font-weight: 600;
             color: var(--color-text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            display: block;
+            margin: 0;
         }
 
         /* Custom dropdown morphism styling */
@@ -1995,18 +2298,24 @@
             margin-bottom: var(--space-16);
         }
 
+        /* Dropdown styling - more compact */
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+        }
+
         .dropdown-selected {
-            padding: 14px 16px;
-            border: 2px solid rgba(0, 0, 0, 0.1);
+            padding: 10px 14px; /* Reduced from 14px 16px */
+            border: 2px solid var(--border-color);
             border-radius: 8px;
-            background: var(--color-surface);
+            background: var(--card-bg);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: all 0.2s ease;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem; /* Slightly smaller */
+            min-height: 40px; /* Fixed height */
         }
 
         .dropdown-selected:hover {
@@ -2093,19 +2402,20 @@
             font-size: 1.2rem;
         }
 
-        /* Single toggle button */
-        .toggle-control {
-            margin-top: 15px;
+        /* Toggle Container */
+        .toggle-container {
+            flex-shrink: 0;
+            margin-left: auto;
         }
 
+        /* Toggle Button - compact */
         .toggle-cards-btn {
-            width: 100%;
-            padding: 12px 20px;
+            padding: 10px 16px; /* Compact padding */
             border: 2px solid rgba(102, 126, 234, 0.3);
             border-radius: 8px;
             background: transparent;
             color: var(--color-text);
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Slightly smaller */
             font-weight: 600;
             cursor: pointer;
             display: flex;
@@ -2113,6 +2423,8 @@
             justify-content: center;
             gap: 8px;
             transition: all 0.3s ease;
+            white-space: nowrap;
+            min-height: 40px; /* Match dropdown height */
         }
 
         .toggle-cards-btn:hover {
@@ -2155,10 +2467,73 @@
             }
         }
 
-        /* Responsive design */
+        /* Remove daily goal styles */
+        .daily-goal-widget {
+            display: none; /* Hide completely */
+        }
+
+        /* Difficulty Filter Styling (same as Company) */
+        .difficulty-filter-container .custom-dropdown {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Difficulty Indicators */
+        .difficulty-indicator {
+            display: inline-block;
+            margin-right: 6px;
+            font-size: 0.8rem;
+        }
+
+        .difficulty-indicator.easy {
+            color: #10b981;
+        }
+
+        .difficulty-indicator.medium {
+            color: #f59e0b;
+        }
+
+        .difficulty-indicator.hard {
+            color: #ef4444;
+        }
+
+        /* Responsive - stack on mobile */
         @media (max-width: 768px) {
-            .top-controls {
-                grid-template-columns: 1fr;
+            .controls-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-wrapper {
+                max-width: 100%;
+            }
+            
+            .toggle-container {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            .toggle-cards-btn {
+                width: 100%;
+            }
+
+            /* Mobile: Remove sticky on small screens */
+            .left-sidebar,
+            .right-sidebar {
+                position: fixed;
+                top: 64px;
+                max-height: calc(100vh - 64px);
+            }
+        }
+
+        /* Tablet adjustments for topics section */
+        @media (min-width: 769px) and (max-width: 1200px) {
+            .topics-section {
+                max-height: 60vh;
+            }
+            
+            .topic-list {
+                max-height: calc(60vh - 40px);
             }
         }
     </style>
@@ -2182,12 +2557,6 @@
             
             <div class="nav-content">
                 <div class="nav-stats">
-                    <span class="stat-item">
-                        <strong id="totalSolved">141</strong> Problems
-                    </span>
-                    <span class="stat-item">
-                        <strong id="currentStreak">0</strong> Solved
-                    </span>
                     <span class="stat-item streak-item">
                         <strong id="navStreakCount">0</strong>
                         <svg class="fire-icon" viewBox="0 0 24 24" width="18" height="18">
@@ -2242,205 +2611,239 @@
                     <div class="topic-item active" onclick="filterByTopic('all')">
                         <div class="topic-info">
                             <span class="topic-name">All Topics</span>
-                            <span class="topic-progress">141/141</span>
+                            <span class="topic-progress">0/141</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 100%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('arrays')">
                         <div class="topic-info">
                             <span class="topic-name">Arrays</span>
-                            <span class="topic-progress">5/11</span>
+                            <span class="topic-progress">0/11</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 45%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('voting')">
                         <div class="topic-info">
                             <span class="topic-name">Voting Algorithm</span>
-                            <span class="topic-progress">1/2</span>
+                            <span class="topic-progress">0/2</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 50%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('hashing')">
                         <div class="topic-info">
                             <span class="topic-name">Hashing</span>
-                            <span class="topic-progress">3/6</span>
+                            <span class="topic-progress">0/6</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 50%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('binary-search')">
                         <div class="topic-info">
                             <span class="topic-name">Binary Search</span>
-                            <span class="topic-progress">7/11</span>
+                            <span class="topic-progress">0/11</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 64%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('recursion')">
                         <div class="topic-info">
                             <span class="topic-name">Recursion</span>
-                            <span class="topic-progress">2/3</span>
+                            <span class="topic-progress">0/3</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 67%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('backtracking')">
                         <div class="topic-info">
                             <span class="topic-name">Backtracking</span>
-                            <span class="topic-progress">1/2</span>
+                            <span class="topic-progress">0/2</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 50%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('linkedlist')">
                         <div class="topic-info">
                             <span class="topic-name">LinkedList</span>
-                            <span class="topic-progress">6/9</span>
+                            <span class="topic-progress">0/9</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 67%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('greedy')">
                         <div class="topic-info">
                             <span class="topic-name">Greedy</span>
-                            <span class="topic-progress">3/5</span>
+                            <span class="topic-progress">0/5</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('sliding-window')">
                         <div class="topic-info">
                             <span class="topic-name">Sliding Window</span>
-                            <span class="topic-progress">4/8</span>
+                            <span class="topic-progress">0/8</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 50%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('stack-queue')">
                         <div class="topic-info">
                             <span class="topic-name">Stack/Queue</span>
-                            <span class="topic-progress">4/6</span>
+                            <span class="topic-progress">0/6</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 67%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('binary-tree')">
                         <div class="topic-info">
                             <span class="topic-name">Binary Tree</span>
-                            <span class="topic-progress">8/13</span>
+                            <span class="topic-progress">0/13</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 62%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('binary-search-tree')">
                         <div class="topic-info">
                             <span class="topic-name">Binary Search Tree</span>
-                            <span class="topic-progress">4/6</span>
+                            <span class="topic-progress">0/6</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 67%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('heaps')">
                         <div class="topic-info">
                             <span class="topic-name">Heaps</span>
-                            <span class="topic-progress">3/6</span>
+                            <span class="topic-progress">0/6</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 50%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('graphs')">
                         <div class="topic-info">
                             <span class="topic-name">Graphs</span>
-                            <span class="topic-progress">15/25</span>
+                            <span class="topic-progress">0/25</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('dp')">
                         <div class="topic-info">
                             <span class="topic-name">Dynamic Programming</span>
-                            <span class="topic-progress">15/23</span>
+                            <span class="topic-progress">0/23</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 65%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                     
                     <div class="topic-item" onclick="filterByTopic('tries')">
                         <div class="topic-info">
                             <span class="topic-name">Tries</span>
-                            <span class="topic-progress">3/5</span>
+                            <span class="topic-progress">0/5</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%"></div>
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Keep other sections -->
-            <div class="badges-section">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                    <div class="badge-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-                    <h3 class="section-title" style="margin: 0;">BADGES</h3>
-                </div>
-                <div class="badges-mini" id="badgesMini">
-                    <!-- Mini badges will be generated by JavaScript -->
-                </div>
-            </div>
-            
-            <div class="calendar-section">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                    <div class="badge-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/></svg></div>
-                    <h3 class="section-title" style="margin: 0;">STREAK</h3>
-                </div>
-                <div class="streak-display">
-                    <div class="current-streak" style="display: flex; align-items: center; gap: 8px; justify-content: center;">
-                        <span class="streak-number" id="streakNumber">0</span>
-                        <svg class="fire-icon" viewBox="0 0 24 24" width="24" height="24">
-                            <defs>
-                                <linearGradient id="fireStreakSidebar" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FA709A;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#FEE140;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <path fill="url(#fireStreakSidebar)" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
-                        </svg>
-                        <div>
-                            <span class="streak-label">day streak</span>
+            <!-- Quick Stats - MOVED HERE FROM RIGHT SIDEBAR -->
+            <div class="quick-stats-section">
+                <h3 class="section-title">QUICK STATS</h3>
+                <div class="stats-grid">
+                    <!-- Total Problems Card -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">141</div>
+                            <div class="stat-label">Total Problems</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Solved Card -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="solvedCount">0</div>
+                            <div class="stat-label">Solved</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Success Rate Card -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="successRate">0%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Current Streak Card -->
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value-container">
+                                <div class="stat-value" id="currentStreak">0</div>
+                                <svg class="fire-icon-inline" viewBox="0 0 24 24" width="18" height="18">
+                                    <defs>
+                                        <linearGradient id="fireInline" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#FA709A;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#FEE140;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path fill="url(#fireInline)" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Day Streak</div>
                         </div>
                     </div>
                 </div>
@@ -2449,100 +2852,114 @@
 
         <!-- Responsive Main Content Area -->
         <div class="main-content">
-            <!-- Controls Section - Daily Goal & Company Filter -->
+            <!-- Controls Section - Company Filter & Toggle Side-by-Side -->
             <div class="controls-section">
                 <div class="top-controls">
-                    <section class="daily-goal-widget">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <div class="goal-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);"><svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-                                <h3 style="margin: 0;">Daily Goal</h3>
-                            </div>
-                            <div style="display: flex; gap: 8px;">
-                                <button class="btn btn-secondary" onclick="setDailyGoal(1)">1</button>
-                                <button class="btn btn-secondary" onclick="setDailyGoal(3)">3</button>
-                                <button class="btn btn-secondary" onclick="setDailyGoal(5)">5</button>
-                            </div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="dailyGoalProgress" style="width: 0%;"></div>
-                        </div>
-                        <div style="font-size: 14px; color: var(--color-text-secondary); margin-top: 8px;">
-                            <span id="dailyGoalText">0 / 3 problems solved today</span>
-                        </div>
-                    </section>
-                    
-                    <section class="company-filter-widget">
-                        <label class="filter-label">Company</label>
-                        <div class="custom-dropdown" id="companyDropdown">
-                            <div class="dropdown-selected" onclick="toggleDropdown()">
-                                <span id="selectedCompany">All Companies</span>
-                                <svg class="dropdown-arrow" viewBox="0 0 24 24" width="16" height="16">
-                                    <path d="M7 10l5 5 5-5z" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <div class="dropdown-menu" id="dropdownMenu">
-                                <div class="dropdown-search">
-                                    <input type="text" placeholder="Search companies..." id="companySearch">
+                    <div class="controls-row">
+                        <!-- Company Filter -->
+                        <div class="filter-wrapper company-filter-container">
+                            <label class="filter-label">Company</label>
+                            <div class="custom-dropdown" id="companyDropdown">
+                                <div class="dropdown-selected" onclick="toggleDropdown('company')">
+                                    <span id="selectedCompany">All Companies</span>
+                                    <svg class="dropdown-arrow" viewBox="0 0 24 24" width="20" height="20">
+                                        <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                                    </svg>
                                 </div>
-                                <div class="dropdown-options">
-                                    <div class="dropdown-option selected" data-value="all" onclick="selectCompany('all', 'All Companies')">
-                                        All Companies
+                                <div class="dropdown-menu" id="companyDropdownMenu">
+                                    <div class="dropdown-search">
+                                        <input type="text" placeholder="Search companies..." id="companySearch">
                                     </div>
-                                    <div class="dropdown-option" data-value="Adobe" onclick="selectCompany('Adobe', 'Adobe')">
-                                        Adobe
-                                    </div>
-                                    <div class="dropdown-option" data-value="Amazon" onclick="selectCompany('Amazon', 'Amazon')">
-                                        Amazon
-                                    </div>
-                                    <div class="dropdown-option" data-value="Apple" onclick="selectCompany('Apple', 'Apple')">
-                                        Apple
-                                    </div>
-                                    <div class="dropdown-option" data-value="Bloomberg" onclick="selectCompany('Bloomberg', 'Bloomberg')">
-                                        Bloomberg
-                                    </div>
-                                    <div class="dropdown-option" data-value="Facebook" onclick="selectCompany('Facebook', 'Facebook')">
-                                        Facebook
-                                    </div>
-                                    <div class="dropdown-option" data-value="Flipkart" onclick="selectCompany('Flipkart', 'Flipkart')">
-                                        Flipkart
-                                    </div>
-                                    <div class="dropdown-option" data-value="Goldman Sachs" onclick="selectCompany('Goldman Sachs', 'Goldman Sachs')">
-                                        Goldman Sachs
-                                    </div>
-                                    <div class="dropdown-option" data-value="Google" onclick="selectCompany('Google', 'Google')">
-                                        Google
-                                    </div>
-                                    <div class="dropdown-option" data-value="LinkedIn" onclick="selectCompany('LinkedIn', 'LinkedIn')">
-                                        LinkedIn
-                                    </div>
-                                    <div class="dropdown-option" data-value="Meta" onclick="selectCompany('Meta', 'Meta')">
-                                        Meta
-                                    </div>
-                                    <div class="dropdown-option" data-value="Microsoft" onclick="selectCompany('Microsoft', 'Microsoft')">
-                                        Microsoft
-                                    </div>
-                                    <div class="dropdown-option" data-value="Oracle" onclick="selectCompany('Oracle', 'Oracle')">
-                                        Oracle
-                                    </div>
-                                    <div class="dropdown-option" data-value="Uber" onclick="selectCompany('Uber', 'Uber')">
-                                        Uber
+                                    <div class="dropdown-options">
+                                        <div class="dropdown-option selected" data-value="all" onclick="selectCompany('all', 'All Companies')">
+                                            All Companies
+                                        </div>
+                                        <div class="dropdown-option" data-value="Adobe" onclick="selectCompany('Adobe', 'Adobe')">
+                                            Adobe
+                                        </div>
+                                        <div class="dropdown-option" data-value="Amazon" onclick="selectCompany('Amazon', 'Amazon')">
+                                            Amazon
+                                        </div>
+                                        <div class="dropdown-option" data-value="Apple" onclick="selectCompany('Apple', 'Apple')">
+                                            Apple
+                                        </div>
+                                        <div class="dropdown-option" data-value="Bloomberg" onclick="selectCompany('Bloomberg', 'Bloomberg')">
+                                            Bloomberg
+                                        </div>
+                                        <div class="dropdown-option" data-value="Facebook" onclick="selectCompany('Facebook', 'Facebook')">
+                                            Facebook
+                                        </div>
+                                        <div class="dropdown-option" data-value="Flipkart" onclick="selectCompany('Flipkart', 'Flipkart')">
+                                            Flipkart
+                                        </div>
+                                        <div class="dropdown-option" data-value="Goldman Sachs" onclick="selectCompany('Goldman Sachs', 'Goldman Sachs')">
+                                            Goldman Sachs
+                                        </div>
+                                        <div class="dropdown-option" data-value="Google" onclick="selectCompany('Google', 'Google')">
+                                            Google
+                                        </div>
+                                        <div class="dropdown-option" data-value="LinkedIn" onclick="selectCompany('LinkedIn', 'LinkedIn')">
+                                            LinkedIn
+                                        </div>
+                                        <div class="dropdown-option" data-value="Meta" onclick="selectCompany('Meta', 'Meta')">
+                                            Meta
+                                        </div>
+                                        <div class="dropdown-option" data-value="Microsoft" onclick="selectCompany('Microsoft', 'Microsoft')">
+                                            Microsoft
+                                        </div>
+                                        <div class="dropdown-option" data-value="Oracle" onclick="selectCompany('Oracle', 'Oracle')">
+                                            Oracle
+                                        </div>
+                                        <div class="dropdown-option" data-value="Uber" onclick="selectCompany('Uber', 'Uber')">
+                                            Uber
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="toggle-control">
+                        
+                        <!-- Difficulty Filter (NEW) -->
+                        <div class="filter-wrapper difficulty-filter-container">
+                            <label class="filter-label">Difficulty</label>
+                            <div class="custom-dropdown" id="difficultyDropdown">
+                                <div class="dropdown-selected" onclick="toggleDropdown('difficulty')">
+                                    <span id="selectedDifficulty">All Levels</span>
+                                    <svg class="dropdown-arrow" viewBox="0 0 24 24" width="20" height="20">
+                                        <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-menu" id="difficultyDropdownMenu">
+                                    <div class="dropdown-options">
+                                        <div class="dropdown-option selected" data-value="all" onclick="selectDifficulty('all', 'All Levels')">
+                                            All Levels
+                                        </div>
+                                        <div class="dropdown-option" data-value="Easy" onclick="selectDifficulty('Easy', 'Easy')">
+                                            <span class="difficulty-indicator easy">●</span> Easy
+                                        </div>
+                                        <div class="dropdown-option" data-value="Medium" onclick="selectDifficulty('Medium', 'Medium')">
+                                            <span class="difficulty-indicator medium">●</span> Medium
+                                        </div>
+                                        <div class="dropdown-option" data-value="Hard" onclick="selectDifficulty('Hard', 'Hard')">
+                                            <span class="difficulty-indicator hard">●</span> Hard
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Expand/Collapse Toggle -->
+                        <div class="toggle-container">
                             <button class="toggle-cards-btn" id="toggleCardsBtn" onclick="toggleAllCards()">
-                                <svg class="toggle-icon" id="toggleIcon" viewBox="0 0 24 24">
-                                    <path d="M19 13H5v-2h14v2z"/>
+                                <svg class="toggle-icon" id="toggleIcon" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M19 13H5v-2h14v2z" fill="currentColor"/>
                                 </svg>
                                 <span id="toggleText">Collapse All</span>
                             </button>
                         </div>
-                        <div id="activeFilters" style="font-size: 12px; color: var(--color-text-secondary); margin-top: 8px;">
-                            <span id="filterStatus">Showing all problems</span>
-                        </div>
-                    </section>
+                    </div>
+                    <div id="activeFilters" style="font-size: 12px; color: var(--color-text-secondary); margin-top: 8px;">
+                        <span id="filterStatus">Showing all problems</span>
+                    </div>
                 </div>
             </div>
 
@@ -2573,78 +2990,88 @@
                     <div class="sidebar-title" style="margin: 0; color: var(--color-text);">Achievements</div>
                 </div>
                 <div class="badges-container" id="badgesContainer">
-                    <!-- Badges will be generated by JavaScript -->
+                    <!-- Modern Achievement/Badge Icons with Gradients -->
+                    <div class="achievement-item">
+                        <div class="achievement-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">First Solve</div>
+                            <div class="achievement-desc">Solve your first problem</div>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon" style="background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/>
+                            </svg>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">7 Day Streak</div>
+                            <div class="achievement-desc">Maintain a 7-day streak</div>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">10 Problems</div>
+                            <div class="achievement-desc">Solve 10 problems</div>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">50 Problems</div>
+                            <div class="achievement-desc">Solve 50 problems</div>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">100 Problems</div>
+                            <div class="achievement-desc">Solve 100 problems</div>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/>
+                            </svg>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">30 Day Streak</div>
+                            <div class="achievement-desc">Maintain a 30-day streak</div>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+                                <path d="M5 16L3 5h5.5l1.5 9 1.5-9H17l-2 11H5z"/>
+                            </svg>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">Pattern Master</div>
+                            <div class="achievement-desc">Master all patterns</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="quick-stats-section">
-                <h3 class="section-title">QUICK STATS</h3>
-                
-                <div class="stats-grid">
-                    <!-- Total Problems -->
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <svg viewBox="0 0 24 24" width="20" height="20">
-                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="stat-content">
-                            <div class="stat-value" id="totalProblems">141</div>
-                            <div class="stat-label">Total Problems</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Solved -->
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);">
-                            <svg viewBox="0 0 24 24" width="20" height="20">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="stat-content">
-                            <div class="stat-value" id="solvedCount">0</div>
-                            <div class="stat-label">Solved</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Success Rate -->
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
-                            <svg viewBox="0 0 24 24" width="20" height="20">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="stat-content">
-                            <div class="stat-value" id="successRate">0%</div>
-                            <div class="stat-label">Success Rate</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Current Streak -->
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);">
-                            <svg viewBox="0 0 24 24" width="20" height="20">
-                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="stat-content">
-                            <div class="stat-value-container">
-                                <div class="stat-value" id="currentStreakStat">0</div>
-                                <svg class="fire-icon-inline" viewBox="0 0 24 24" width="20" height="20">
-                                    <defs>
-                                        <linearGradient id="fireInlineQuickStats" x1="0%" y1="0%" x2="0%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#FA709A;stop-opacity:1" />
-                                            <stop offset="100%" style="stop-color:#FEE140;stop-opacity:1" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path fill="url(#fireInlineQuickStats)" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
-                                </svg>
-                            </div>
-                            <div class="stat-label">Day Streak</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </aside>
     </div>
 
@@ -2662,7 +3089,12 @@
             </div>
             
             <div class="timer-widget" style="margin-bottom: 16px;">
-                <span>⏱️ Timer:</span>
+                <span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align: text-bottom; margin-right: 4px;">
+                        <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0 0 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a8.994 8.994 0 0 0 7.03-14.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                    </svg>
+                    Timer:
+                </span>
                 <div class="timer-display" id="timerDisplay">00:00</div>
                 <button class="timer-btn" id="timerStart" onclick="startTimer()">Start</button>
                 <button class="timer-btn" id="timerPause" onclick="pauseTimer()">Pause</button>
@@ -2682,7 +3114,12 @@
             </div>
             
             <div class="notes-section">
-                <label style="font-weight: 600; margin-bottom: 8px; display: block;">📝 Personal Notes</label>
+                <label style="font-weight: 600; margin-bottom: 8px; display: block;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align: text-bottom; margin-right: 4px;">
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                    </svg>
+                    Personal Notes
+                </label>
                 <textarea class="notes-textarea" id="problemNotes" placeholder="Add your notes, approach, or solution here..."></textarea>
             </div>
             
@@ -2741,20 +3178,42 @@
 
     <script>
         // Global state management (using variables instead of localStorage due to sandbox restrictions)
+        let progressState = {
+            totalProblems: 141,
+            solvedProblems: 0,
+            completedByTopic: {
+                'Arrays': 0,
+                'Voting Algorithm': 0, 
+                'Hashing': 0,
+                'Binary Search': 0,
+                'Recursion': 0,
+                'Backtracking': 0,
+                'LinkedList': 0,
+                'Greedy Algorithms': 0,
+                'Sliding Window': 0,
+                'Stack/Queue': 0,
+                'Binary Tree': 0,
+                'Binary Search Tree': 0,
+                'Heaps': 0,
+                'Graphs': 0,
+                'Dynamic Programming': 0,
+                'Tries': 0
+            },
+            currentStreak: 0,
+            longestStreak: 0,
+            completedProblems: new Set()
+        };
+
         let userData = {
-            solvedProblems: new Set(),
             bookmarkedProblems: new Set(),
             problemNotes: {},
             problemStatus: {},
             problemTimes: {},
             activityLog: [],
-            currentStreak: 0,
-            longestStreak: 0,
             dailyGoal: 3,
             selectedRoadmap: 'beginner',
             darkMode: false,
-            badges: new Set(),
-            videosWatched: new Set()
+            badges: new Set()
         };
 
         let currentTimer = {
@@ -3190,6 +3649,7 @@
 
         let currentFilter = 'all';
         let currentCompanyFilter = 'all';
+        let currentDifficultyFilter = 'all';
         let expandedCards = new Set();
         
         /*
@@ -3200,40 +3660,115 @@
          * - Smooth CSS transitions for all expansion/collapse animations
          */
 
-        // Badge definitions
+        // Badge definitions - emojis replaced with SVG icons
         const badges = {
-            first_solve: { name: 'First Solve', icon: '🎯', condition: (data) => data.solvedProblems.size >= 1 },
-            problem_10: { name: '10 Problems', icon: '🔟', condition: (data) => data.solvedProblems.size >= 10 },
-            problem_50: { name: '50 Problems', icon: '🏅', condition: (data) => data.solvedProblems.size >= 50 },
-            problem_100: { name: '100 Problems', icon: '💯', condition: (data) => data.solvedProblems.size >= 100 },
-            streak_7: { name: '7 Day Streak', icon: '🔥', condition: (data) => data.currentStreak >= 7 },
-            streak_30: { name: '30 Day Streak', icon: '⚡', condition: (data) => data.currentStreak >= 30 },
-            video_10: { name: '10 Videos', icon: '📺', condition: (data) => data.videosWatched.size >= 10 },
-            video_25: { name: '25 Videos', icon: '🎬', condition: (data) => data.videosWatched.size >= 25 },
-            video_50: { name: '50 Videos', icon: '🎭', condition: (data) => data.videosWatched.size >= 50 },
-            pattern_master: { name: 'Pattern Master', icon: '👑', condition: (data) => {
-                return Object.keys(dsaPatterns).every(pattern => {
-                    const total = dsaPatterns[pattern].problems.length;
-                    const solved = dsaPatterns[pattern].problems.filter(p => data.solvedProblems.has(p.name)).length;
-                    return solved >= Math.ceil(total * 0.8); // 80% of each pattern
-                });
-            }}
+            first_solve: { 
+                name: 'First Solve', 
+                icon: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`, 
+                condition: () => progressState.solvedProblems >= 1 
+            },
+            problem_10: { 
+                name: '10 Problems', 
+                icon: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>`, 
+                condition: () => progressState.solvedProblems >= 10 
+            },
+            problem_50: { 
+                name: '50 Problems', 
+                icon: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>`, 
+                condition: () => progressState.solvedProblems >= 50 
+            },
+            problem_100: { 
+                name: '100 Problems', 
+                icon: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`, 
+                condition: () => progressState.solvedProblems >= 100 
+            },
+            streak_7: { 
+                name: '7 Day Streak', 
+                icon: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/></svg>`, 
+                condition: () => progressState.currentStreak >= 7 
+            },
+            streak_30: { 
+                name: '30 Day Streak', 
+                icon: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/></svg>`, 
+                condition: () => progressState.currentStreak >= 30 
+            },
+            pattern_master: { 
+                name: 'Pattern Master', 
+                icon: `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M5 16L3 5h5.5l1.5 9 1.5-9H17l-2 11H5z"/></svg>`, 
+                condition: () => {
+                    return Object.entries(progressState.completedByTopic).every(([topic, completed]) => {
+                        const topicTotals = {
+                            'Arrays': 11, 'Voting Algorithm': 2, 'Hashing': 6, 'Binary Search': 11,
+                            'Recursion': 3, 'Backtracking': 2, 'LinkedList': 9, 'Greedy Algorithms': 5,
+                            'Sliding Window': 8, 'Stack/Queue': 6, 'Binary Tree': 13, 'Binary Search Tree': 6,
+                            'Heaps': 6, 'Graphs': 25, 'Dynamic Programming': 23, 'Tries': 5
+                        };
+                        const total = topicTotals[topic] || 0;
+                        return total === 0 || completed >= Math.ceil(total * 0.8); // 80% of each pattern
+                    });
+                }
+            }
         };
 
         // Initialize the application
         function init() {
             loadUserData();
             renderPatterns();
+            initializeCheckboxes();
+            initializeProblems();
+            updateAllTopicsProgress();
             renderCalendarHeatmap();
             renderBadges();
-            renderBadgesMini();
+            // renderBadgesMini(); - removed from sidebar
             updateStreakDisplay();
-            updateStats();
+            checkAchievements();
             setupEventListeners();
             initResponsive();
         }
 
-        // Load user data (simulate persistent storage but use variables due to sandbox)
+        // Initialize all problems as uncompleted
+        function initializeProblems() {
+            const allProblems = document.querySelectorAll('.problem-item');
+            
+            allProblems.forEach(problem => {
+                // Remove completed class if it exists
+                problem.classList.remove('completed');
+                
+                // Set checkbox to unchecked state
+                const checkbox = problem.querySelector('.status-checkbox');
+                if (checkbox) {
+                    checkbox.checked = false;
+                    checkbox.parentElement.classList.remove('checked');
+                }
+            });
+        }
+
+        // Update All Topics progress
+        function updateAllTopicsProgress() {
+            const totalProblems = 141;
+            const solvedProblems = getSolvedCount();
+            
+            const allTopicsItem = document.querySelector('.topic-item:first-child');
+            if (allTopicsItem) {
+                const progressSpan = allTopicsItem.querySelector('.topic-progress');
+                const progressFill = allTopicsItem.querySelector('.progress-fill');
+                
+                if (progressSpan) {
+                    progressSpan.textContent = `${solvedProblems}/${totalProblems}`;
+                }
+                
+                if (progressFill) {
+                    const percentage = totalProblems > 0 ? (solvedProblems / totalProblems) * 100 : 0;
+                    progressFill.style.width = percentage + '%';
+                }
+            }
+        }
+
+        function getSolvedCount() {
+            return progressState.completedProblems.size;
+        }
+
+        // Load user progress and data
         function loadUserData() {
             // Load theme preference and apply immediately to prevent flash
             const savedTheme = false; // Simulated theme preference
@@ -3243,12 +3778,18 @@
             document.documentElement.classList.toggle('dark-mode', userData.darkMode);
             document.body.classList.toggle('dark-mode', userData.darkMode);
             
-            // Simulate some progress for demo purposes
-            userData.solvedProblems.add('Two Sum');
-            userData.solvedProblems.add('Valid Anagram');
-            userData.solvedProblems.add('Invert Binary Tree');
-            userData.currentStreak = 3;
-            userData.longestStreak = 7;
+            // Initialize with zero progress - all counters start at 0
+            progressState.solvedProblems = 0;
+            progressState.currentStreak = 0;
+            progressState.longestStreak = 0;
+            
+            // Clear all completed problems to ensure clean start
+            progressState.completedProblems.clear();
+            
+            // Reset all topic counts to 0
+            Object.keys(progressState.completedByTopic).forEach(topic => {
+                progressState.completedByTopic[topic] = 0;
+            });
             
             // Simulate some activity for the calendar
             const today = new Date();
@@ -3260,12 +3801,125 @@
                     count: Math.floor(Math.random() * 5)
                 });
             }
+
+            // Update all displays
+            updateAllProgressDisplays();
+        }
+
+        // Initialize checkboxes on page load
+        function initializeCheckboxes() {
+            // All problems start as uncompleted (no localStorage in sandbox)
+            document.querySelectorAll('.problem-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+                checkbox.closest('.problem-item').classList.remove('completed');
+            });
+        }
+
+        // Handle checkbox change - FIXED IMPLEMENTATION
+        function handleCheckboxChange(checkbox) {
+            const problemId = checkbox.dataset.problemId;
+            const topic = checkbox.dataset.topic;
+            const problemItem = checkbox.closest('.problem-item');
+            
+            if (checkbox.checked) {
+                // Mark as completed
+                if (!progressState.completedProblems.has(problemId)) {
+                    progressState.completedProblems.add(problemId);
+                    problemItem.classList.add('completed');
+                    
+                    // Increment counts
+                    progressState.solvedProblems++;
+                    progressState.completedByTopic[topic] = (progressState.completedByTopic[topic] || 0) + 1;
+                }
+            } else {
+                // Mark as uncompleted
+                if (progressState.completedProblems.has(problemId)) {
+                    progressState.completedProblems.delete(problemId);
+                    problemItem.classList.remove('completed');
+                    
+                    // Decrement counts
+                    progressState.solvedProblems--;
+                    progressState.completedByTopic[topic] = Math.max((progressState.completedByTopic[topic] || 0) - 1, 0);
+                }
+            }
+            
+            // Update all displays immediately
+            updateAllProgressDisplays();
+            updateAllTopicsProgress();
+            checkAchievements();
+        }
+
+        // Update all progress displays
+        function updateAllProgressDisplays() {
+            // Navbar - only update streak (solved count removed)
+            const navStreakCount = document.getElementById('navStreakCount');
+            if (navStreakCount) navStreakCount.textContent = progressState.currentStreak;
+            
+            // Quick Stats
+            const solvedCount = document.getElementById('solvedCount');
+            if (solvedCount) solvedCount.textContent = progressState.solvedProblems;
+            
+            const successRate = progressState.totalProblems > 0 
+                ? Math.round((progressState.solvedProblems / progressState.totalProblems) * 100) 
+                : 0;
+            const successRateElem = document.getElementById('successRate');
+            if (successRateElem) successRateElem.textContent = successRate + '%';
+            
+            const currentStreakStat = document.getElementById('currentStreakStat');
+            if (currentStreakStat) currentStreakStat.textContent = progressState.currentStreak;
+            
+            // Update topic progress in sidebar
+            updateTopicProgress();
+            
+            // Update pattern cards
+            renderPatterns();
+        }
+
+        // Update topic progress in sidebar
+        function updateTopicProgress() {
+            const topicMappings = {
+                'Arrays': { selector: '.topic-item:nth-child(2)', total: 11 },
+                'Voting Algorithm': { selector: '.topic-item:nth-child(3)', total: 2 },
+                'Hashing': { selector: '.topic-item:nth-child(4)', total: 6 },
+                'Binary Search': { selector: '.topic-item:nth-child(5)', total: 11 },
+                'Recursion': { selector: '.topic-item:nth-child(6)', total: 3 },
+                'Backtracking': { selector: '.topic-item:nth-child(7)', total: 2 },
+                'LinkedList': { selector: '.topic-item:nth-child(8)', total: 9 },
+                'Greedy Algorithms': { selector: '.topic-item:nth-child(9)', total: 5 },
+                'Sliding Window': { selector: '.topic-item:nth-child(10)', total: 8 },
+                'Stack/Queue': { selector: '.topic-item:nth-child(11)', total: 6 },
+                'Binary Tree': { selector: '.topic-item:nth-child(12)', total: 13 },
+                'Binary Search Tree': { selector: '.topic-item:nth-child(13)', total: 6 },
+                'Heaps': { selector: '.topic-item:nth-child(14)', total: 6 },
+                'Graphs': { selector: '.topic-item:nth-child(15)', total: 25 },
+                'Dynamic Programming': { selector: '.topic-item:nth-child(16)', total: 23 },
+                'Tries': { selector: '.topic-item:nth-child(17)', total: 5 }
+            };
+            
+            Object.entries(topicMappings).forEach(([topic, config]) => {
+                const topicElement = document.querySelector(config.selector);
+                if (topicElement) {
+                    const completed = progressState.completedByTopic[topic] || 0;
+                    const progressSpan = topicElement.querySelector('.topic-progress');
+                    const progressFill = topicElement.querySelector('.progress-fill');
+                    
+                    if (progressSpan) {
+                        progressSpan.textContent = `${completed}/${config.total}`;
+                    }
+                    
+                    if (progressFill) {
+                        const percentage = (completed / config.total) * 100;
+                        progressFill.style.width = percentage + '%';
+                    }
+                }
+            });
         }
 
         // Render pattern cards
         // Helper functions
         function getUserProblemStatus(problemName) {
-            return userData.problemStatus[problemName] || 'not-started';
+            const problemId = problemName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+            return progressState.completedProblems.has(problemId) ? 'completed' : 'not-started';
         }
 
         function getProblemCompanies(problemName) {
@@ -3307,11 +3961,19 @@
             
             if (isBookmarked) {
                 userData.bookmarkedProblems.delete(problemName);
-                bookmarkBtn.textContent = '☆';
+                if (bookmarkBtn) {
+                    bookmarkBtn.innerHTML = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+                }
             } else {
                 userData.bookmarkedProblems.add(problemName);
-                bookmarkBtn.textContent = '⭐';
+                if (bookmarkBtn) {
+                    bookmarkBtn.innerHTML = `<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+                }
             }
+        }
+
+        function applyAllFilters() {
+            renderPatterns();
         }
 
         function renderPatterns() {
@@ -3325,23 +3987,27 @@
                 // Topic filter
                 if (currentFilter !== 'all' && key !== currentFilter) return;
                 
-                // Filter problems by company
+                // Filter problems by company and difficulty
                 const filteredPatternProblems = pattern.problems.filter(problem => {
                     const problemCompanies = getProblemCompanies(problem.name);
                     const companyMatch = currentCompanyFilter === 'all' || problemCompanies.includes(currentCompanyFilter);
+                    const difficultyMatch = currentDifficultyFilter === 'all' || problem.difficulty.toLowerCase() === currentDifficultyFilter.toLowerCase();
                     
-                    if (companyMatch) {
+                    if (companyMatch && difficultyMatch) {
                         totalVisibleProblems++;
                         if (currentFilter !== 'all') filteredProblems++;
                     }
                     
-                    return companyMatch;
+                    return companyMatch && difficultyMatch;
                 });
                 
-                // Skip pattern if no problems match company filter
+                // Skip pattern if no problems match filters
                 if (filteredPatternProblems.length === 0) return;
                 
-                const solvedCount = filteredPatternProblems.filter(p => userData.solvedProblems.has(p.name)).length;
+                const solvedCount = filteredPatternProblems.filter(p => {
+                    const problemId = p.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+                    return progressState.completedProblems.has(problemId);
+                }).length;
                 const totalCount = filteredPatternProblems.length;
                 const progressPercent = totalCount > 0 ? Math.round((solvedCount / totalCount) * 100) : 0;
 
@@ -3383,18 +4049,19 @@
                     <div class="pattern-description">${pattern.description}</div>
                     <div class="problems-list">
                         ${filteredPatternProblems.map(problem => `
-                            <div class="problem-item">
+                            <div class="problem-item" data-problem-id="${problem.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}" data-topic="${pattern.name}">
                                 <div style="display: flex; align-items: center; gap: 8px;">
-                                    <div class="status-indicator" data-problem="${problem.name}">
-                                        ${getUserProblemStatus(problem.name) === 'completed' || getUserProblemStatus(problem.name) === 'mastered' ? '✓' : 
-                                          getUserProblemStatus(problem.name) === 'in-progress' ? '🟡' : 
-                                          getUserProblemStatus(problem.name) === 'revisit' ? '🔴' : '⚪'}
-                                    </div>
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" class="problem-checkbox" 
+                                               data-problem-id="${problem.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}"
+                                               data-topic="${pattern.name}"
+                                               onchange="handleCheckboxChange(this)">
+                                        <span class="checkbox-custom"></span>
+                                    </label>
                                     <div>
                                         <div class="problem-name">${problem.name}</div>
                                         ${renderCompanyBadges(getProblemCompanies(problem.name))}
                                         ${userData.problemTimes[problem.name] ? `<div style="font-size: 10px; color: var(--color-text-secondary);">Time: ${formatTime(userData.problemTimes[problem.name])}</div>` : ''}
-                                        ${userData.videosWatched.has(problem.name) ? `<div style="font-size: 10px; color: var(--color-primary);">📺 Video watched</div>` : ''}
                                     </div>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 6px;">
@@ -3403,11 +4070,11 @@
                                             style="padding: 4px; font-size: 12px;">
                                         ${userData.bookmarkedProblems.has(problem.name) ? '⭐' : '☆'}
                                     </button>
-                                    <button class="problem-link" style="background: var(--color-primary); font-size: 10px; padding: 4px 8px;" 
-                                            onclick="event.stopPropagation(); openVideoModal('${problem.name}', '${problem.video || ''}')">📺 Video</button>
+                                    <button class="video-btn" 
+                                            onclick="event.stopPropagation(); openVideoModal('${problem.name}', '${problem.video || ''}')" title="Watch video solution">Video</button>
                                     <span class="difficulty ${problem.difficulty}">${problem.difficulty}</span>
-                                    <button class="problem-link" 
-                                       onclick="event.stopPropagation(); openProblemModal('${problem.name}', '${problem.link}', '${problem.difficulty}')">Solve</button>
+                                    <a href="${problem.link}" target="_blank" rel="noopener noreferrer" class="solve-btn" 
+                                       onclick="event.stopPropagation()" title="Solve on LeetCode">Solve</a>
                                 </div>
                             </div>
                         `).join('')}
@@ -3431,20 +4098,23 @@
             const filterStatus = document.getElementById('filterStatus');
             let statusText = '';
             
-            if (currentFilter === 'all' && currentCompanyFilter === 'all') {
+            const patternName = currentFilter !== 'all' ? dsaPatterns[currentFilter]?.name : 'all patterns';
+            const companyText = currentCompanyFilter !== 'all' ? currentCompanyFilter : 'all companies';
+            const difficultyText = currentDifficultyFilter !== 'all' ? currentDifficultyFilter : 'all difficulties';
+            
+            if (currentFilter === 'all' && currentCompanyFilter === 'all' && currentDifficultyFilter === 'all') {
                 statusText = `Showing all ${totalProblems} problems`;
-            } else if (currentFilter !== 'all' && currentCompanyFilter === 'all') {
-                const patternName = dsaPatterns[currentFilter]?.name || currentFilter;
-                statusText = `Showing ${totalProblems} ${patternName} problems`;
-            } else if (currentFilter === 'all' && currentCompanyFilter !== 'all') {
-                statusText = `Showing ${totalProblems} ${currentCompanyFilter} problems`;
             } else {
-                const patternName = dsaPatterns[currentFilter]?.name || currentFilter;
-                statusText = `Showing ${totalProblems} ${currentCompanyFilter} problems in ${patternName}`;
+                const filters = [];
+                if (currentFilter !== 'all') filters.push(patternName);
+                if (currentCompanyFilter !== 'all') filters.push(companyText);
+                if (currentDifficultyFilter !== 'all') filters.push(difficultyText);
+                
+                statusText = `Showing ${totalProblems} problems: ${filters.join(' • ')}`;
             }
             
             if (totalProblems === 0) {
-                statusText = `No problems found for ${currentCompanyFilter} in ${currentFilter === 'all' ? 'any pattern' : dsaPatterns[currentFilter]?.name}. Try different filters.`;
+                statusText = 'No problems found with current filters. Try different filter combinations.';
             }
             
             filterStatus.textContent = statusText;
@@ -3452,41 +4122,53 @@
 
         // Company filter function
         function filterByCompany() {
-            renderPatterns();
+            applyAllFilters();
         }
         
         // New dropdown functions
         let dropdownOpen = false;
 
-        function toggleDropdown() {
-            const menu = document.getElementById('dropdownMenu');
-            const selected = document.querySelector('.dropdown-selected');
-            dropdownOpen = !dropdownOpen;
-            
-            if (dropdownOpen) {
-                menu.classList.add('active');
-                selected.classList.add('active');
-            } else {
-                menu.classList.remove('active');
-                selected.classList.remove('active');
+        function toggleDropdown(type) {
+            if (type === 'company') {
+                const menu = document.getElementById('companyDropdownMenu');
+                const diffMenu = document.getElementById('difficultyDropdownMenu');
+                diffMenu?.classList.remove('active');
+                menu.classList.toggle('active');
+            } else if (type === 'difficulty') {
+                const menu = document.getElementById('difficultyDropdownMenu');
+                const compMenu = document.getElementById('companyDropdownMenu');
+                compMenu?.classList.remove('active');
+                menu.classList.toggle('active');
             }
         }
 
         function selectCompany(value, displayName) {
             document.getElementById('selectedCompany').textContent = displayName;
-            document.getElementById('dropdownMenu').classList.remove('active');
-            document.querySelector('.dropdown-selected').classList.remove('active');
-            dropdownOpen = false;
+            document.getElementById('companyDropdownMenu').classList.remove('active');
             
             // Apply filter
             currentCompanyFilter = value;
-            renderPatterns();
+            applyAllFilters();
             
             // Highlight selected option
-            document.querySelectorAll('.dropdown-option').forEach(opt => {
+            document.querySelectorAll('#companyDropdownMenu .dropdown-option').forEach(opt => {
                 opt.classList.remove('selected');
             });
-            document.querySelector(`[data-value="${value}"]`).classList.add('selected');
+            document.querySelector(`#companyDropdownMenu [data-value="${value}"]`)?.classList.add('selected');
+        }
+
+        function selectDifficulty(value, displayName) {
+            document.getElementById('selectedDifficulty').textContent = displayName;
+            document.getElementById('difficultyDropdownMenu').classList.remove('active');
+            
+            currentDifficultyFilter = value;
+            applyAllFilters();
+            
+            // Update selected state
+            document.querySelectorAll('#difficultyDropdownMenu .dropdown-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            document.querySelector(`#difficultyDropdownMenu [data-value="${value}"]`)?.classList.add('selected');
         }
 
         // Track toggle state
@@ -3609,10 +4291,22 @@
                     option.classList.add('active');
                     if (currentProblem) {
                         userData.problemStatus[currentProblem.name] = option.dataset.status;
+                        const problemId = currentProblem.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+                        
                         if (option.dataset.status === 'completed' || option.dataset.status === 'mastered') {
-                            userData.solvedProblems.add(currentProblem.name);
-                            updateStats();
-                            renderBadges();
+                            if (!progressState.completedProblems.has(problemId)) {
+                                progressState.completedProblems.add(problemId);
+                                progressState.solvedProblems++;
+                                updateAllProgressDisplays();
+                                checkAchievements();
+                            }
+                        } else {
+                            if (progressState.completedProblems.has(problemId)) {
+                                progressState.completedProblems.delete(problemId);
+                                progressState.solvedProblems--;
+                                updateAllProgressDisplays();
+                                checkAchievements();
+                            }
                         }
                     }
                 });
@@ -3662,13 +4356,12 @@
                 });
             }
 
-            // Close dropdown when clicking outside
+            // Close dropdowns when clicking outside
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('.custom-dropdown')) {
-                    const menu = document.getElementById('dropdownMenu');
-                    const selected = document.querySelector('.dropdown-selected');
-                    if (menu) menu.classList.remove('active');
-                    if (selected) selected.classList.remove('active');
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        menu.classList.remove('active');
+                    });
                     dropdownOpen = false;
                 }
             });
@@ -3737,7 +4430,9 @@
             
             // Set bookmark state
             const isBookmarked = userData.bookmarkedProblems.has(name);
-            bookmarkBtn.textContent = isBookmarked ? '⭐' : '☆';
+            bookmarkBtn.innerHTML = isBookmarked ? 
+                `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>` : 
+                `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
             bookmarkBtn.classList.toggle('active', isBookmarked);
             
             // Set status
@@ -3854,13 +4549,7 @@
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
             
-            // Track video view
-            if (!userData.videosWatched.has(problemName)) {
-                userData.videosWatched.add(problemName);
-                updateStats();
-                renderBadges();
-                renderPatterns(); // Refresh to show video watched indicator
-            }
+            // Video tracking removed - users can watch videos without tracking
         }
         
         function closeVideoModal() {
@@ -4005,8 +4694,8 @@
         }
 
         function setDailyGoal(goal) {
-            userData.dailyGoal = goal;
-            updateStats();
+            // Daily goal functionality removed
+            return;
         }
 
         function toggleBookmark() {
@@ -4017,11 +4706,11 @@
             
             if (isBookmarked) {
                 userData.bookmarkedProblems.delete(currentProblem.name);
-                bookmarkBtn.textContent = '☆';
+                bookmarkBtn.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
                 bookmarkBtn.classList.remove('active');
             } else {
                 userData.bookmarkedProblems.add(currentProblem.name);
-                bookmarkBtn.textContent = '⭐';
+                bookmarkBtn.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
                 bookmarkBtn.classList.add('active');
             }
         }
@@ -4072,53 +4761,78 @@
         }
 
         function updateStats() {
-            document.getElementById('totalSolved').textContent = userData.solvedProblems.size;
-            document.getElementById('currentStreak').textContent = userData.currentStreak;
-            document.getElementById('navStreakCount').textContent = userData.currentStreak;
+            // Use progressState instead of userData for progress tracking
+            const navStreakCount = document.getElementById('navStreakCount');
+            if (navStreakCount) navStreakCount.textContent = progressState.currentStreak;
             
-            const totalProblems = Object.values(dsaPatterns).reduce((sum, pattern) => sum + pattern.problems.length, 0);
-            document.getElementById('totalProblems').textContent = totalProblems;
+            const totalProblemsElem = document.getElementById('totalProblems');
+            if (totalProblemsElem) totalProblemsElem.textContent = progressState.totalProblems;
             
-            const completionRate = totalProblems > 0 ? Math.round((userData.solvedProblems.size / totalProblems) * 100) : 0;
+            const completionRate = progressState.totalProblems > 0 ? Math.round((progressState.solvedProblems / progressState.totalProblems) * 100) : 0;
             
             // Update new Quick Stats elements
-            document.getElementById('solvedCount').textContent = userData.solvedProblems.size;
-            document.getElementById('successRate').textContent = `${completionRate}%`;
-            document.getElementById('currentStreakStat').textContent = userData.currentStreak;
+            const solvedCount = document.getElementById('solvedCount');
+            if (solvedCount) solvedCount.textContent = progressState.solvedProblems;
             
-            // Update daily goal progress
-            const todaySolved = 1; // Simulate today's progress
-            const dailyProgress = Math.min((todaySolved / userData.dailyGoal) * 100, 100);
-            document.getElementById('dailyGoalProgress').style.width = `${dailyProgress}%`;
-            document.getElementById('dailyGoalText').textContent = `${todaySolved} / ${userData.dailyGoal} problems solved today`;
+            const successRate = document.getElementById('successRate');
+            if (successRate) successRate.textContent = `${completionRate}%`;
+            
+            const currentStreakStat = document.getElementById('currentStreakStat');
+            if (currentStreakStat) currentStreakStat.textContent = progressState.currentStreak;
+            
+            // Daily goal removed - no updates needed
             
             // Check for new badges
             Object.entries(badges).forEach(([key, badge]) => {
-                if (badge.condition(userData) && !userData.badges.has(key)) {
+                if (badge.condition() && !userData.badges.has(key)) {
                     userData.badges.add(key);
                     // Could show a notification here
                 }
             });
             
-            document.getElementById('totalBadges').textContent = userData.badges.size;
+            // Remove totalBadges reference as it doesn't exist in current HTML
             
-            // Update mini badges
-            renderBadgesMini();
-            updateStreakDisplay();
+            // Update achievement badges in right sidebar
+            renderBadges();
+            // renderBadgesMini(); - badges removed
+            // updateStreakDisplay(); - streak section removed
         }
 
         function renderBadges() {
             const container = document.getElementById('badgesContainer');
-            container.innerHTML = '';
+            if (!container) return;
             
-            Object.entries(badges).forEach(([key, badge]) => {
-                const badgeEl = document.createElement('div');
-                badgeEl.className = `badge ${userData.badges.has(key) ? 'earned' : ''}`;
-                badgeEl.innerHTML = `
-                    <div class="badge-icon">${badge.icon}</div>
-                    <div class="badge-name">${badge.name}</div>
-                `;
-                container.appendChild(badgeEl);
+            // Use the existing modern gradient achievement items from HTML
+            // Update their states based on user progress
+            const achievements = container.querySelectorAll('.achievement-item');
+            const badgeArray = Object.entries(badges);
+            
+            achievements.forEach((achievementEl, index) => {
+                if (index < badgeArray.length) {
+                    const [key, badge] = badgeArray[index];
+                    const isEarned = badge.condition();
+                    
+                    // Update earned state
+                    achievementEl.classList.toggle('locked', !isEarned);
+                    
+                    // Update achievement info if needed
+                    const nameEl = achievementEl.querySelector('.achievement-name');
+                    const descEl = achievementEl.querySelector('.achievement-desc');
+                    
+                    if (nameEl) nameEl.textContent = badge.name;
+                    if (descEl) {
+                        const descriptions = {
+                            'first_solve': 'Solve your first problem',
+                            'problem_10': 'Solve 10 problems', 
+                            'problem_50': 'Solve 50 problems',
+                            'problem_100': 'Solve 100 problems',
+                            'streak_7': 'Maintain a 7-day streak',
+                            'streak_30': 'Maintain a 30-day streak',
+                            'pattern_master': 'Master all patterns'
+                        };
+                        descEl.textContent = descriptions[key] || 'Complete the challenge';
+                    }
+                }
             });
         }
 
@@ -4186,29 +4900,38 @@
         }
 
         function renderBadgesMini() {
-            const container = document.getElementById('badgesMini');
-            if (!container) return;
-            
-            container.innerHTML = '';
-            
-            Object.entries(badges).forEach(([key, badge]) => {
-                const badgeEl = document.createElement('div');
-                badgeEl.className = `badge-mini ${userData.badges.has(key) ? 'earned' : ''}`;
-                badgeEl.innerHTML = badge.icon;
-                badgeEl.title = badge.name;
-                container.appendChild(badgeEl);
-            });
+            // Badges mini removed from left sidebar
         }
 
         function updateStreakDisplay() {
-            const streakNumber = document.getElementById('streakNumber');
-            if (streakNumber) {
-                streakNumber.textContent = userData.currentStreak;
-            }
+            // Streak display removed from sidebar - only update navbar and Quick Stats
+            // The streak is now only shown in navbar and Quick Stats in left sidebar
+        }
+
+        // Check for achievements
+        function checkAchievements() {
+            Object.entries(badges).forEach(([key, badge]) => {
+                if (badge.condition() && !userData.badges.has(key)) {
+                    userData.badges.add(key);
+                    // Could show achievement notification here
+                }
+            });
+            
+            // Update badge displays in right sidebar only
+            renderBadges();
+            // renderBadgesMini(); - removed from left sidebar
         }
 
         // Initialize app when DOM is loaded
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', () => {
+            init();
+            // Ensure proper initialization after DOM is ready
+            setTimeout(() => {
+                initializeCheckboxes();
+                initializeProblems();
+                updateAllTopicsProgress();
+            }, 100);
+        });
         
         // Handle window resize for responsive behavior
         window.addEventListener('resize', () => {
@@ -4272,19 +4995,12 @@
             }
         });
         
-        // Add some sample video watches for demo
-        userData.videosWatched.add('Two Sum');
-        userData.videosWatched.add('Valid Anagram');
+        // Remove sample video watches - video watched feature removed
         
         // Initialize responsive behavior
         function initResponsive() {
-            // Set initial theme icon
-            const themeToggle = document.getElementById('themeToggle');
-            if (themeToggle) {
-                themeToggle.innerHTML = userData.darkMode ? 
-                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/><path d="m12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>' :
-                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-            }
+            // Theme toggle initialization already handled in dark mode section
+            // No additional setup needed
         }
         
         // Call responsive init
