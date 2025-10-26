@@ -1,0 +1,2605 @@
+{
+    "hashing": [
+      {
+        "name": "Contains Duplicate",
+        "slug": "contains-duplicate",
+        "status": "EXISTS",
+        "current_topic": "Hashing",
+        "difficulty": "easy",
+        "video": "https://youtu.be/3OamzN90kPg",
+        "link": "https://leetcode.com/problems/contains-duplicate/",
+        "companies": []
+      },
+      {
+        "name": "Group Anagrams",
+        "slug": "group-anagrams",
+        "status": "EXISTS",
+        "current_topic": "Hashing",
+        "difficulty": "medium",
+        "video": "https://youtu.be/vzdNOK2oB2E",
+        "link": "https://leetcode.com/problems/group-anagrams/",
+        "companies": []
+      },
+      {
+        "name": "Valid Anagram",
+        "slug": "valid-anagram",
+        "status": "EXISTS",
+        "current_topic": "Hashing",
+        "difficulty": "easy",
+        "video": "https://youtu.be/9UtInBqnCgA",
+        "link": "https://leetcode.com/problems/valid-anagram/",
+        "companies": []
+      }
+    ],
+    "recursion": [
+      {
+        "name": "Subsets II",
+        "slug": "subsets-ii",
+        "status": "EXISTS",
+        "current_topic": "Recursion",
+        "difficulty": "medium",
+        "video": "https://youtu.be/Vn2v6ajA7U0",
+        "link": "https://leetcode.com/problems/subsets-ii/",
+        "companies": []
+      },
+      {
+        "name": "Subsets",
+        "slug": "subsets",
+        "status": "EXISTS",
+        "current_topic": "Recursion",
+        "difficulty": "medium",
+        "video": "https://youtu.be/REOH22Xwdkk",
+        "link": "https://leetcode.com/problems/subsets/",
+        "companies": []
+      }
+    ],
+    "linkedlist": [
+      {
+        "name": "Copy List with Random Pointer",
+        "slug": "copy-list-with-random-pointer",
+        "status": "EXISTS",
+        "current_topic": "LinkedList",
+        "difficulty": "medium",
+        "video": "https://youtu.be/5Y2EiZST97Y",
+        "link": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+        "companies": []
+      },
+      {
+        "name": "Reorder List",
+        "slug": "reorder-list",
+        "status": "EXISTS",
+        "current_topic": "LinkedList",
+        "difficulty": "medium",
+        "video": "https://youtu.be/S5bfdUTrKLM",
+        "link": "https://leetcode.com/problems/reorder-list/",
+        "companies": []
+      }
+    ],
+    "voting algorithm": [
+      {
+        "name": "Majority Element II",
+        "slug": "majority-element-ii",
+        "status": "EXISTS",
+        "current_topic": "Voting Algorithm",
+        "difficulty": "medium",
+        "video": "https://youtu.be/yDbkQd9t2ig",
+        "link": "https://leetcode.com/problems/majority-element-ii/",
+        "companies": []
+      },
+      {
+        "name": "Majority Element",
+        "slug": "majority-element",
+        "status": "EXISTS",
+        "current_topic": "Voting Algorithm",
+        "difficulty": "easy",
+        "video": "https://youtu.be/AoX3BPWNnoE",
+        "link": "https://leetcode.com/problems/majority-element/",
+        "companies": []
+      }
+    ],
+    "arrays": [
+      {
+        "name": "Count of Smaller Numbers After Self",
+        "slug": "count-of-smaller-numbers-after-self",
+        "status": "EXISTS",
+        "current_topic": "Arrays",
+        "difficulty": "hard",
+        "video": "https://youtu.be/0aMcjMYEPHE",
+        "link": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+        "companies": []
+      },
+      {
+        "name": "Reverse Pairs",
+        "slug": "reverse-pairs",
+        "status": "EXISTS",
+        "current_topic": "Arrays",
+        "difficulty": "hard",
+        "video": "https://youtu.be/S6rsAlj_iB4",
+        "link": "https://leetcode.com/problems/reverse-pairs/",
+        "companies": []
+      },
+      {
+        "name": "Maximum Subarray",
+        "slug": "maximum-subarray",
+        "status": "EXISTS",
+        "current_topic": "Arrays",
+        "difficulty": "easy",
+        "video": "https://youtu.be/AHZpyENo7k4",
+        "link": "https://leetcode.com/problems/maximum-subarray/",
+        "companies": []
+      }
+    ],
+    "tries": [
+      {
+        "name": "Concatenated Words",
+        "slug": "concatenated-words",
+        "status": "EXISTS",
+        "current_topic": "Tries",
+        "difficulty": "hard",
+        "video": "https://youtu.be/mTyrs_FeHiU",
+        "link": "https://leetcode.com/problems/concatenated-words/",
+        "companies": []
+      }
+    ],
+  "Fast and Slow Pointer": [
+    {
+      "name": "Linked List Cycle II",
+      "slug": "linked-list-cycle-ii",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/linked-list-cycle-ii/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=XgSWW890Hfo",
+      "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Bloomberg"]
+    },
+    {
+      "name": "Remove nth Node from the End of List",
+      "slug": "remove-nth-node-from-end-of-list",
+      "status": "EXISTS",
+      "current_topic": "LinkedList",
+      "difficulty": "medium",
+      "video": "https://youtu.be/XVuQxVej6y8",
+      "link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+      "companies": []
+    },
+    {
+      "name": "Find the Duplicate Number",
+      "slug": "find-the-duplicate-number",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/find-the-duplicate-number/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=P5Knc5OmL2o",
+      "companies": ["Amazon", "Facebook", "Google", "Microsoft", "Uber"]
+    },
+    {
+      "name": "Palindrome Linked List",
+      "slug": "palindrome-linked-list",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/palindrome-linked-list/",
+      "difficulty": "Easy",
+      "video": "https://www.youtube.com/watch?v=yOzXms1J6Nk",
+      "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Bloomberg"]
+    },
+    {
+      "name": "Middle of the Linked List",
+      "slug": "middle-of-the-linked-list",
+      "status": "EXISTS",
+      "current_topic": "LinkedList",
+      "difficulty": "easy",
+      "video": "https://youtu.be/sGdwSH8RK-o",
+      "link": "https://leetcode.com/problems/middle-of-the-linked-list/",
+      "companies": []
+    },
+    {
+      "name": "Linked List Cycle",
+      "slug": "linked-list-cycle",
+      "status": "EXISTS",
+      "current_topic": "LinkedList",
+      "difficulty": "easy",
+      "video": "https://youtu.be/gBTe7lFR3vc",
+      "link": "https://leetcode.com/problems/linked-list-cycle/",
+      "companies": []
+    }
+  ],
+  "Overlapping Intervals": [
+    {
+      "name": "Basic Merge: Merge Intervals",
+      "slug": "merge-intervals",
+      "status": "EXISTS",
+      "current_topic": "Arrays",
+      "difficulty": "medium",
+      "video": "https://youtu.be/44H3cEC2fFM",
+      "link": "https://leetcode.com/problems/merge-intervals/",
+      "companies": []
+    },
+    {
+      "name": "Interval Insertion: Insert Interval",
+      "slug": "insert-interval",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/insert-interval/",
+      "difficulty": "Hard",
+      "video": "https://www.youtube.com/watch?v=A8NUOmlwOlM",
+      "companies": ["Amazon", "Facebook", "Google", "Microsoft", "Apple"]
+    },
+    {
+      "name": "My Calendar ii",
+      "slug": "my-calendar-ii",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/my-calendar-ii/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=7utL5cTDcnA",
+      "companies": ["Google", "Facebook", "Amazon", "Snap", "Apple"]
+    },
+    {
+      "name": "Minimum Number of Arrows to Burst Balloons",
+      "slug": "minimum-number-of-arrows-to-burst-balloons",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=_WIFehFkkig",
+      "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"]
+    },
+    {
+      "name": "Non-overlapping Intervals",
+      "slug": "non-overlapping-intervals",
+      "status": "EXISTS",
+      "current_topic": "Greedy Algorithms",
+      "difficulty": "medium",
+      "video": "https://youtu.be/ecinOOO3RGo",
+      "link": "https://leetcode.com/problems/non-overlapping-intervals/",
+      "companies": []
+    },
+    {
+      "name": "Merge Two Sorted Lists",
+      "slug": "merge-two-sorted-lists",
+      "status": "EXISTS",
+      "current_topic": "LinkedList",
+      "difficulty": "easy",
+      "video": "https://youtu.be/XIdigk956u0",
+      "link": "https://leetcode.com/problems/merge-two-sorted-lists/",
+      "companies": []
+    },
+    {
+      "name": "Merge Sorted Array",
+      "slug": "merge-sorted-array",
+      "status": "EXISTS",
+      "current_topic": "Arrays",
+      "difficulty": "easy",
+      "video": "https://youtu.be/P1Ic85RarKY",
+      "link": "https://leetcode.com/problems/merge-sorted-array/",
+      "companies": []
+    },
+    {
+      "name": "Meeting Rooms",
+      "slug": "meeting-rooms",
+      "status": "EXISTS",
+      "current_topic": "Greedy Algorithms",
+      "difficulty": "easy",
+      "video": "https://youtu.be/PaJxqZVPhbg",
+      "link": "https://leetcode.com/problems/meeting-rooms/",
+      "companies": []
+    },
+    {
+      "name": "Meeting Rooms II",
+      "slug": "meeting-rooms-ii",
+      "status": "EXISTS",
+      "current_topic": "Greedy Algorithms",
+      "difficulty": "medium",
+      "video": "https://youtu.be/FdzJmTCVyJU",
+      "link": "https://leetcode.com/problems/meeting-rooms-ii/",
+      "companies": []
+    }
+  ],
+  "Prefix Sum": [
+    {
+      "name": "Find the middle index in array",
+      "slug": "find-the-middle-index-in-array",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/find-the-middle-index-in-array/",
+      "difficulty": "Easy",
+      "video": "https://www.youtube.com/watch?v=0Ia9WcejsRY",
+      "companies": ["Amazon", "Google", "Apple", "Facebook", "Microsoft"]
+    },
+    {
+      "name": "Product of array except self",
+      "slug": "product-of-array-except-self",
+      "status": "EXISTS",
+      "current_topic": "Arrays",
+      "difficulty": "medium",
+      "video": "https://youtu.be/bNvIQI2wAjk",
+      "link": "https://leetcode.com/problems/product-of-array-except-self/",
+      "companies": []
+    },
+    {
+      "name": "Maximum product subarray",
+      "slug": "maximum-product-subarray",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/maximum-product-subarray/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=lXVy6YWFcRM",
+      "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Bloomberg"]
+    },
+    {
+      "name": "Number of ways to split array",
+      "slug": "number-of-ways-to-split-array",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/number-of-ways-to-split-array/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=JK_zuiNYJOQ",
+      "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Bloomberg"]
+    },
+    {
+      "name": "Range Sum Query 2D",
+      "slug": "range-sum-query-2d-immutable",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=KE8MQuwE2yA",
+      "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Apple"]
+    },
+    {
+      "name": "Continuous Subarray Sum",
+      "slug": "continuous-subarray-sum",
+      "status": "EXISTS",
+      "current_topic": "Hashing",
+      "difficulty": "medium",
+      "video": "https://youtu.be/OKcrLfR-8mE",
+      "link": "https://leetcode.com/problems/continuous-subarray-sum/",
+      "companies": []
+    },
+    {
+      "name": "Subarray Sums Divisible by K",
+      "slug": "subarray-sums-divisible-by-k",
+      "status": "EXISTS",
+      "current_topic": "Hashing",
+      "difficulty": "medium",
+      "video": "https://youtu.be/pkN-hSeF04U",
+      "link": "https://leetcode.com/problems/subarray-sums-divisible-by-k/",
+      "companies": []
+    },
+    {
+      "name": "Subarray Sum Equals K",
+      "slug": "subarray-sum-equals-k",
+      "status": "EXISTS",
+      "current_topic": "Hashing",
+      "difficulty": "medium",
+      "video": "https://youtu.be/HbbYPQc-Oo4",
+      "link": "https://leetcode.com/problems/subarray-sum-equals-k/",
+      "companies": []
+    }
+  ],
+  "Sliding Window Fixed": [
+       {
+        "name": "Maximum Sum Subarray of Size K",
+        "slug": "maximum-sum-of-distinct-subarrays-with-length-k",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/",
+        "difficulty": "Easy",
+        "video": "https://www.youtube.com/watch?v=KtpqeN0Goro",
+        "companies": ["Amazon", "Google", "Apple", "Facebook", "Microsoft"]
+      },
+      {
+        "name": "Number of Subarrays having Average Greater or Equal to Threshold",
+        "slug": "number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=2ZOxYhdNQAs",
+        "companies": ["Microsoft", "Amazon", "Google", "Facebook", "Apple"]
+      },
+      {
+        "name": "Repeated DNA sequences",
+        "slug": "repeated-dna-sequences",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/repeated-dna-sequences/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=FzTYfsmtOso",
+        "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Bloomberg"]
+      },
+      {
+        "name": "Permutation in String",
+        "slug": "permutation-in-string",
+        "status": "EXISTS",
+        "current_topic": "Sliding Window",
+        "difficulty": "medium",
+        "video": "https://youtu.be/UbyhOgBN834",
+        "link": "https://leetcode.com/problems/permutation-in-string/",
+        "companies": []
+      },
+      {
+        "name": "Sliding Subarray Beauty",
+        "slug": "sliding-subarray-beauty",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/sliding-subarray-beauty/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=W1M1OSDqHxM",
+        "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Sliding Window Maximum",
+        "slug": "sliding-window-maximum",
+        "status": "EXISTS",
+        "current_topic": "Sliding Window",
+        "difficulty": "hard",
+        "video": "https://youtu.be/DfljaUwZsOk",
+        "link": "https://leetcode.com/problems/sliding-window-maximum/",
+        "companies": []
+      }
+    ],
+    "Sliding Window Variable": [
+      {
+        "name": "Longest Substring Without Repeating Characters",
+        "slug": "longest-substring-without-repeating-characters",
+        "status": "EXISTS",
+        "current_topic": "Sliding Window",
+        "difficulty": "medium",
+        "video": "https://youtu.be/wiGpQwVHdE0",
+        "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+        "companies": []
+      },
+      {
+        "name": "Minimum Size Subarray Sum",
+        "slug": "minimum-size-subarray-sum",
+        "status": "NEW",
+        "current_topic": "Sliding Window",
+        "link": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=RG17VCQOFpg",
+        "companies": ["Amazon", "Facebook", "Google", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Subarray Product Less Than K",
+        "slug": "subarray-product-less-than-k",
+        "status": "NEW",
+        "current_topic": "Sliding Window",
+        "link": "https://leetcode.com/problems/subarray-product-less-than-k/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=SxtxCSfSGlo",
+        "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Uber"]
+      },
+      {
+        "name": "Max Consecutive Ones",
+        "slug": "max-consecutive-ones-iii",
+        "status": "NEW",
+        "current_topic": "Sliding Window",
+        "link": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=4velNAJGnnM",
+        "companies": ["Facebook", "Google", "Amazon", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Fruits Into Baskets",
+        "slug": "fruit-into-baskets",
+        "status": "NEW",
+        "current_topic": "Sliding Window",
+        "link": "https://leetcode.com/problems/fruit-into-baskets/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=Oi09pnLLy78",
+        "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Minimum Window Substring: Minimum Window Substring",
+        "slug": "minimum-window-substring",
+        "status": "EXISTS",
+        "current_topic": "Sliding Window",
+        "difficulty": "hard",
+        "video": "https://youtu.be/jSto0O4AJbM",
+        "link": "https://leetcode.com/problems/minimum-window-substring/",
+        "companies": []
+      }
+    ],
+    "Sliding Window (Extra)": [
+      {
+        "name": "Find All Anagrams in a String",
+        "slug": "find-all-anagrams-in-a-string",
+        "status": "EXISTS",
+        "current_topic": "Sliding Window",
+        "difficulty": "medium",
+        "video": "https://youtu.be/G8xtZy0fDKg",
+        "link": "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
+        "companies": []
+      },
+      {
+        "name": "Substring with Concatenation of All Words",
+        "slug": "substring-with-concatenation-of-all-words",
+        "status": "EXISTS",
+        "current_topic": "Sliding Window",
+        "difficulty": "hard",
+        "video": "https://youtu.be/8rXjm1PzP9Y",
+        "link": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/",
+        "companies": []
+      },
+      {
+        "name": "Longest Repeating Character Replacement",
+        "slug": "longest-repeating-character-replacement",
+        "status": "EXISTS",
+        "current_topic": "Sliding Window",
+        "difficulty": "medium",
+        "video": "https://youtu.be/gqXU1UyA8pk",
+        "link": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+        "companies": []
+      },
+      {
+        "name": "Maximum Average Subarray I",
+        "slug": "maximum-average-subarray-i",
+        "status": "EXISTS",
+        "current_topic": "Sliding Window",
+        "difficulty": "easy",
+        "video": "https://youtu.be/hJ_Uy2DStOs",
+        "link": "https://leetcode.com/problems/maximum-average-subarray-i/",
+        "companies": []
+      }
+    ],
+  "Two Pointers": [
+    {
+      "name": "Two Sum II - Input Array is Sorted",
+      "slug": "two-sum-ii-input-array-is-sorted",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+      "difficulty": "Easy",
+      "video": "https://www.youtube.com/watch?v=EgGmGlitcak",
+      "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+    },
+    {
+      "name": "Dutch National Flag: Sort Colors",
+      "slug": "sort-colors",
+      "status": "EXISTS",
+      "current_topic": "Arrays",
+      "difficulty": "medium",
+      "video": "https://youtu.be/4xbWSRZHqac",
+      "link": "https://leetcode.com/problems/sort-colors/",
+      "companies": []
+    },
+    {
+      "name": "Next Permutation",
+      "slug": "next-permutation",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/next-permutation/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=nIzLp4Tkr0U",
+      "companies": ["Google", "Facebook", "Amazon", "Microsoft", "Apple"]
+    },
+    {
+      "name": "Bag of Tokens",
+      "slug": "bag-of-tokens",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/bag-of-tokens/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=prI82maTivg",
+      "companies": ["Google", "Facebook", "Amazon", "Microsoft", "Apple"]
+    },
+    {
+      "name": "Container with most water",
+      "slug": "container-with-most-water",
+      "status": "EXISTS",
+      "current_topic": "Arrays",
+      "difficulty": "medium",
+      "video": "https://youtu.be/UuiTKBwPgAo",
+      "link": "https://leetcode.com/problems/container-with-most-water/",
+      "companies": []
+    },
+    {
+      "name": "Trapping Rain Water",
+      "slug": "trapping-rain-water",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/trapping-rain-water/",
+      "difficulty": "Hard",
+      "video": "https://www.youtube.com/watch?v=ZI2z5pq0TqA",
+      "companies": ["Google", "Facebook", "Microsoft", "Amazon", "Apple"]
+    },
+    {
+      "name": "3Sum",
+      "slug": "3sum",
+      "status": "EXISTS",
+      "current_topic": "Arrays",
+      "difficulty": "medium",
+      "video": "https://youtu.be/DhFh8Kw7ymk",
+      "link": "https://leetcode.com/problems/3sum/",
+      "companies": []
+    },
+    {
+      "name": "Two Sum",
+      "slug": "two-sum",
+      "status": "EXISTS",
+      "current_topic": "Arrays",
+      "difficulty": "easy",
+      "video": "https://youtu.be/UXW6rj9BgIQ",
+      "link": "https://leetcode.com/problems/two-sum/",
+      "companies": []
+    }
+  ],
+  "Cyclic Sort (Index-Based)": [
+    {
+      "name": "Missing Number",
+      "slug": "missing-number",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/missing-number/",
+      "difficulty": "Easy",
+      "video": "https://www.youtube.com/watch?v=iCrQG_kbuP0",
+      "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Apple"]
+    },
+    {
+      "name": "Find Missing Numbers",
+      "slug": "find-all-numbers-disappeared-in-an-array",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
+      "difficulty": "Easy",
+      "video": "https://www.youtube.com/watch?v=8i-f24YFWC4",
+      "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+    },
+    {
+      "name": "Set Mismatch",
+      "slug": "set-mismatch",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/set-mismatch/",
+      "difficulty": "Easy",
+      "video": "https://www.youtube.com/watch?v=b4KAe7fhDw8",
+      "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Apple"]
+    },
+    {
+      "name": "First Missing Positive",
+      "slug": "first-missing-positive",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/first-missing-positive/",
+      "difficulty": "Hard",
+      "video": "https://www.youtube.com/watch?v=qRC4VkOdOZ0",
+      "companies": ["Google", "Facebook", "Amazon", "Microsoft", "Uber"]
+    }
+  ],
+  "Reversal of Linked List (In-place)": [
+    {
+      "name": "Reverse Linked List",
+      "slug": "reverse-linked-list",
+      "status": "EXISTS",
+      "current_topic": "LinkedList",
+      "difficulty": "easy",
+      "video": "https://youtu.be/G0_I-ZF0S38",
+      "link": "https://leetcode.com/problems/reverse-linked-list/",
+      "companies": []
+    },
+    {
+      "name": "Reverse Nodes in k-Group",
+      "slug": "reverse-nodes-in-k-group",
+      "status": "EXISTS",
+      "current_topic": "LinkedList",
+      "difficulty": "hard",
+      "video": "https://youtu.be/1UOPsfP85V4",
+      "link": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+      "companies": []
+    },
+    {
+      "name": "Swap Nodes in Pairs",
+      "slug": "swap-nodes-in-pairs",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/swap-nodes-in-pairs/",
+      "difficulty": "Easy",
+      "video": "https://www.youtube.com/watch?v=o811TZLAWOo",
+      "companies": ["Apple", "Facebook", "Amazon", "Microsoft", "Google"]
+    }
+  ],
+  "Matrix Manipulation": [
+    {
+      "name": "Rotate Image",
+      "slug": "rotate-image",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/rotate-image/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=fMSJSS7eO1w",
+      "companies": ["Amazon", "Microsoft", "Apple", "Facebook", "Lyft"]
+    },
+    {
+      "name": "Spiral Matrix",
+      "slug": "spiral-matrix",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/spiral-matrix/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=3joo9yAZVh8",
+      "companies": ["Google", "Amazon", "Uber", "Microsoft", "Meta"]
+    },
+    {
+      "name": "Set Matrix Zeroes",
+      "slug": "set-matrix-zeroes",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/set-matrix-zeroes/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=T41rL0L3Pnw",
+      "companies": ["Amazon", "Uber", "Adobe", "Microsoft", "Google"]
+    },
+    {
+      "name": "Game of Life",
+      "slug": "game-of-life",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/game-of-life/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=aXAuZ6oGano",
+      "companies": ["Google", "Amazon", "Microsoft", "Apple", "Facebook"]
+    },
+    {
+      "name": "Matrix Chain Multiplication",
+      "slug": "matrix-chain-multiplication",
+      "status": "EXISTS",
+      "current_topic": "Dynamic Programming",
+      "difficulty": "hard",
+      "video": "https://youtu.be/prx1psByp7U",
+      "link": "https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication/",
+      "companies": []
+    },
+    {
+      "name": "Search a 2D Matrix II",
+      "slug": "search-a-2d-matrix-ii",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "medium",
+      "video": "https://youtu.be/ZfFl4torNg4",
+      "link": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
+      "companies": []
+    },
+    {
+      "name": "Search a 2D Matrix",
+      "slug": "search-a-2d-matrix",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "medium",
+      "video": "https://youtu.be/Ber2pi2C0j0",
+      "link": "https://leetcode.com/problems/search-a-2d-matrix/",
+      "companies": []
+    }
+  ],
+  "Breadth First Search (BFS)": [
+    {
+      "name": "Shortest Path in Binary Matrix",
+      "slug": "shortest-path-in-binary-matrix",
+      "status": "EXISTS",
+      "current_topic": "Graphs",
+      "difficulty": "medium",
+      "video": "https://youtu.be/YPIb7GwKkqs",
+      "link": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+      "companies": []
+    },
+    {
+      "name": "Rotten Oranges",
+      "slug": "rotting-oranges",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/rotting-oranges/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=cYgVxX5ssoo",
+      "companies": ["Amazon", "Google", "Microsoft", "Oracle", "Facebook"]
+    },
+    {
+      "name": "As Far From Land as Possible",
+      "slug": "as-far-from-land-as-possible",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/as-far-from-land-as-possible/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=z0DLHMvipTo",
+      "companies": ["Google", "Facebook", "Microsoft", "Apple", "Amazon"]
+    },
+    {
+      "name": "Word Ladder: Word Ladder",
+      "slug": "word-ladder",
+      "status": "EXISTS",
+      "current_topic": "Graphs",
+      "difficulty": "hard",
+      "video": "https://youtu.be/h9iTnkgv05E",
+      "link": "https://leetcode.com/problems/word-ladder/",
+      "companies": []
+    },
+    {
+      "name": "Number of Islands",
+      "slug": "number-of-islands",
+      "status": "EXISTS",
+      "current_topic": "Graphs",
+      "difficulty": "medium",
+      "video": "https://youtu.be/pV2kpPD66nE",
+      "link": "https://leetcode.com/problems/number-of-islands/",
+      "companies": []
+    }
+  ],
+  "Depth First Search (DFS)": [
+    {
+      "name": "Number of Closed Islands",
+      "slug": "number-of-closed-islands",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/number-of-closed-islands/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=QcY61aBwibI",
+      "companies": ["Amazon", "Microsoft", "Google", "Apple", "Facebook"]
+    },
+    {
+      "name": "Coloring a Border",
+      "slug": "coloring-a-border",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/coloring-a-border/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=R3AJoOBVAlg",
+      "companies": ["Google", "Microsoft", "Amazon", "Facebook", "Apple"]
+    },
+    {
+      "name": "Number of Enclaves (DFS from boundary)",
+      "slug": "number-of-enclaves",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/number-of-enclaves/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=gf0zsh1FIgE",
+      "companies": ["Amazon", "Google", "Microsoft", "Apple", "Facebook"]
+    },
+    {
+      "name": "Time Needed to Inform All Employees",
+      "slug": "time-needed-to-inform-all-employees",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/time-needed-to-inform-all-employees/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=z0DLHMvipTo",
+      "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"]
+    },
+    {
+      "name": "Find Eventual Safe States",
+      "slug": "find-eventual-safe-states",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/find-eventual-safe-states/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=wciKkM3g3wQ",
+      "companies": ["Amazon", "Google", "Microsoft", "Facebook", "Apple"]
+    }
+  ],
+  "Backtracking": [
+    {
+      "name": "Permutations II",
+      "slug": "permutations-ii",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/permutations-ii/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=qhBVWf0YafA",
+      "companies": ["Microsoft", "Amazon", "Google", "Apple"]
+    },
+    {
+      "name": "Combination Sum",
+      "slug": "combination-sum",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/combination-sum/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=GBKI9VSKdGg",
+      "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+    },
+    {
+      "name": "Generate Parenthesis",
+      "slug": "generate-parentheses",
+      "status": "EXISTS",
+      "current_topic": "Recursion",
+      "difficulty": "medium",
+      "video": "https://youtu.be/s9fokUqJ76A",
+      "link": "https://leetcode.com/problems/generate-parentheses/",
+      "companies": []
+    },
+    {
+      "name": "N-Queens",
+      "slug": "n-queens",
+      "status": "EXISTS",
+      "current_topic": "Backtracking",
+      "difficulty": "hard",
+      "video": "https://youtu.be/Ph95IHmRp5M",
+      "link": "https://leetcode.com/problems/n-queens/",
+      "companies": []
+    },
+    {
+      "name": "Sudoku Solver",
+      "slug": "sudoku-solver",
+      "status": "EXISTS",
+      "current_topic": "Backtracking",
+      "difficulty": "hard",
+      "video": "https://youtu.be/FWAIf_EVUKE",
+      "link": "https://leetcode.com/problems/sudoku-solver/",
+      "companies": []
+    },
+    {
+      "name": "Palindrome Partitioning",
+      "slug": "palindrome-partitioning",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/palindrome-partitioning/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=3jvWodd7ht0",
+      "companies": ["Amazon", "Google", "Microsoft", "Apple", "Facebook"]
+    },
+    {
+      "name": "Next Permutation",
+      "slug": "next-permutation",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/next-permutation/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=JDOXKqF60RQ",
+      "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Adobe"]
+    },
+    {
+      "name": "Bag of Tokens",
+      "slug": "bag-of-tokens",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/bag-of-tokens/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=prI82maTivg",
+      "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"]
+    },
+    {
+      "name": "Trapping Rain Water",
+      "slug": "trapping-rain-water",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/trapping-rain-water/",
+      "difficulty": "Hard",
+      "video": "https://www.youtube.com/watch?v=ZI2z5pq0TqA",
+      "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"]
+    },
+    {
+    "name": "Word Search",
+    "slug": "word-search",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/word-search/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=pfiQ_PS1g8E",
+    "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Apple"]
+  }
+  ],
+  "Modified Binary Search": [
+    {
+      "name": "Search in Rotated Sorted Array",
+      "slug": "search-in-rotated-sorted-array-ii",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "medium",
+      "video": "https://youtu.be/5qGrJbHhqFs",
+      "link": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+      "companies": []
+    },
+    {
+    "name": "Find Minimum in Rotated Sorted Array",
+    "slug": "find-minimum-in-rotated-sorted-array",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=nIVW4P8b1VA",
+    "companies": ["Amazon", "Google", "Microsoft", "Apple", "Facebook"]
+    },
+    {
+      "name": "Find Peak Element",
+      "slug": "find-peak-element",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "medium",
+      "video": "https://youtu.be/cXxmbemS6XM",
+      "link": "https://leetcode.com/problems/find-peak-element/",
+      "companies": []
+    },
+{
+    "name": "Single Element in a Sorted Array",
+    "slug": "single-element-in-a-sorted-array",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/single-element-in-a-sorted-array/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=nMGL2vlyJk0",
+    "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Adobe"]
+  },
+  {
+    "name": "Minimum Speed to Arrive on Time",
+    "slug": "minimum-speed-to-arrive-on-time",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/minimum-speed-to-arrive-on-time/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=jlk0bxVJxvY",
+    "companies": ["Google", "Amazon", "Uber", "Microsoft", "Facebook"]
+  },
+  {
+    "name": "Capacity to Ship Packages within D Days",
+    "slug": "capacity-to-ship-packages-within-d-days",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=5Y2EiZST97Y",
+    "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+  },
+  {
+    "name": "Find in Mountain Array",
+    "slug": "find-in-mountain-array",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/find-in-mountain-array/",
+    "difficulty": "Hard",
+    "video": "https://www.youtube.com/watch?v=ds2REzci20k",
+    "companies": ["Google", "Amazon", "Apple", "Facebook", "Microsoft"]
+  },
+  {
+    "name": "Median of Two Sorted Arrays",
+    "slug": "median-of-two-sorted-arrays",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+    "difficulty": "Hard",
+    "video": "https://www.youtube.com/watch?v=LPFhl65R7ww",
+    "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Bloomberg"]
+  },
+    {
+      "name": "Word Search II",
+      "slug": "word-search-ii",
+      "status": "EXISTS",
+      "current_topic": "Tries",
+      "difficulty": "hard",
+      "video": "https://youtu.be/asbcE9mZz_U",
+      "link": "https://leetcode.com/problems/word-search-ii/",
+      "companies": []
+    },
+    {
+      "name": "Split Array Largest Sum",
+      "slug": "split-array-largest-sum",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "hard",
+      "video": "https://youtu.be/thUd_WJn6wk",
+      "link": "https://leetcode.com/problems/split-array-largest-sum/",
+      "companies": []
+    },
+    {
+      "name": "Find First and Last Position of Element",
+      "slug": "find-first-and-last-position-of-element-in-sorted-array",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "medium",
+      "video": "https://youtu.be/hjR1IYVx9lY",
+      "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+      "companies": []
+    },
+    {
+      "name": "Delete Node in BST",
+      "slug": "delete-node-in-a-bst",
+      "status": "EXISTS",
+      "current_topic": "Binary Search Tree",
+      "difficulty": "medium",
+      "video": "https://youtu.be/LFzAoJJt92M",
+      "link": "https://leetcode.com/problems/delete-node-in-a-bst/",
+      "companies": []
+    },
+    {
+      "name": "Koko Eating Bananas",
+      "slug": "koko-eating-bananas",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "medium",
+      "video": "https://youtu.be/U2SozAs9RzA",
+      "link": "https://leetcode.com/problems/koko-eating-bananas/",
+      "companies": []
+    },
+    {
+      "name": "Search Insert Position",
+      "slug": "search-insert-position",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "easy",
+      "video": "https://youtu.be/K-RYzDZkzCI",
+      "link": "https://leetcode.com/problems/search-insert-position/",
+      "companies": []
+    },
+    {
+      "name": "Recover Binary Search Tree",
+      "slug": "recover-binary-search-tree",
+      "status": "EXISTS",
+      "current_topic": "Binary Search Tree",
+      "difficulty": "medium",
+      "video": "https://youtu.be/ZWGW7FminDM",
+      "link": "https://leetcode.com/problems/recover-binary-search-tree/",
+      "companies": []
+    },
+    {
+      "name": "Binary Search",
+      "slug": "binary-search",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "easy",
+      "video": "https://youtu.be/s4DPM8ct1pI",
+      "link": "https://leetcode.com/problems/binary-search/",
+      "companies": []
+    },
+    {
+      "name": "Minimum Number of Days to Make m Bouquets",
+      "slug": "minimum-number-of-days-to-make-m-bouquets",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "medium",
+      "video": "https://youtu.be/TXAuxeYBTdg",
+      "link": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
+      "companies": []
+    },
+    {
+      "name": "Peak Index in Mountain Array",
+      "slug": "peak-index-in-a-mountain-array",
+      "status": "EXISTS",
+      "current_topic": "Binary Search",
+      "difficulty": "easy",
+      "video": "https://youtu.be/kMzJy9es7Hc",
+      "link": "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
+      "companies": []
+    },
+    {
+      "name": "Convert BST to Greater Tree",
+      "slug": "convert-bst-to-greater-tree",
+      "status": "EXISTS",
+      "current_topic": "Binary Search Tree",
+      "difficulty": "medium",
+      "video": "https://youtu.be/7vJJlz9FeAk",
+      "link": "https://leetcode.com/problems/convert-bst-to-greater-tree/",
+      "companies": []
+    },
+    {
+      "name": "Kth Smallest Element in BST",
+      "slug": "kth-smallest-element-in-a-bst",
+      "status": "EXISTS",
+      "current_topic": "Binary Search Tree",
+      "difficulty": "medium",
+      "video": "https://youtu.be/5LUXSvjmGCw",
+      "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+      "companies": []
+    },
+    {
+      "name": "Design Add and Search Words Data Structure",
+      "slug": "design-add-and-search-words-data-structure",
+      "status": "EXISTS",
+      "current_topic": "Tries",
+      "difficulty": "medium",
+      "video": "https://youtu.be/BTf05gs_8iU",
+      "link": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+      "companies": []
+    }
+  ],
+  "Bitwise XOR": [
+   {
+    "name": "Missing Number",
+    "slug": "missing-number",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/missing-number/",
+    "difficulty": "Easy",
+    "video": "https://www.youtube.com/watch?v=WnPLSRLSANE",
+    "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+  },
+  {
+    "name": "Single Number II",
+    "slug": "single-number-ii",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/single-number-ii/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=cOFAmaMBVps",
+    "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Apple"]
+  },
+  {
+    "name": "Single Number III",
+    "slug": "single-number-iii",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/single-number-iii/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=pnx5JA9LNM4",
+    "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+  },
+  {
+    "name": "Find the Original Array of Prefix XOR",
+    "slug": "find-the-original-array-of-prefix-xor",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/find-the-original-array-of-prefix-xor/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=JfVOs4VSpmA",
+    "companies": ["Amazon", "Google", "Microsoft", "Facebook", "Apple"]
+  },
+  {
+    "name": "XOR Queries of a Subarray",
+    "slug": "xor-queries-of-a-subarray",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/xor-queries-of-a-subarray/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=ZsT7nSRQ8u8",
+    "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+  },
+    {
+      "name": "Maximum XOR of Two Numbers in Array",
+      "slug": "maximum-xor-of-two-numbers-in-an-array",
+      "status": "EXISTS",
+      "current_topic": "Tries",
+      "difficulty": "medium",
+      "video": "https://youtu.be/jCu-Pd0IjIA",
+      "link": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
+      "companies": []
+    }
+  ],
+  "Top 'K' Elements": [
+    {
+      "name": "Top K Frequent Elements",
+      "slug": "top-k-frequent-elements",
+      "status": "EXISTS",
+      "current_topic": "Heaps",
+      "difficulty": "medium",
+      "video": "https://youtu.be/YPTqKIgVk-k",
+      "link": "https://leetcode.com/problems/top-k-frequent-elements/",
+      "companies": []
+    },
+    {
+      "name": "Kth Largest Element",
+      "slug": "kth-largest-element-in-an-array",
+      "status": "EXISTS",
+      "current_topic": "Heaps",
+      "difficulty": "medium",
+      "video": "https://youtu.be/XEmy13g1Qxc",
+      "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+      "companies": []
+    },
+{
+    "name": "Ugly Number II",
+    "slug": "ugly-number-ii",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/ugly-number-ii/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=Lj68VJ1wu84",
+    "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+  },
+  {
+    "name": "K Closest Points to Origin",
+    "slug": "k-closest-points-to-origin",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/k-closest-points-to-origin/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=XC4EotTewro",
+    "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Apple"]
+  },
+    {
+      "name": "Task Scheduler",
+      "slug": "task-scheduler",
+      "status": "EXISTS",
+      "current_topic": "Heaps",
+      "difficulty": "medium",
+      "video": "https://youtu.be/YCD_iKzyqvs",
+      "link": "https://leetcode.com/problems/task-scheduler/",
+      "companies": []
+    }
+  ],
+  "K-way Merge": [
+{
+    "name": "Find K Pairs with Smallest Sums",
+    "slug": "find-k-pairs-with-smallest-sums",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=R3vYhMwIgLg",
+    "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+  },
+  {
+    "name": "Kth Smallest Element in a Sorted Matrix",
+    "slug": "kth-smallest-element-in-a-sorted-matrix",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+    "difficulty": "Medium",
+    "video": "https://www.youtube.com/watch?v=ptYUCjfNhJY",
+    "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Apple"]
+  },
+    {
+      "name": "Merge K Sorted Lists",
+      "slug": "merge-k-sorted-lists",
+      "status": "EXISTS",
+      "current_topic": "Heaps",
+      "difficulty": "hard",
+      "video": "https://youtu.be/q5a5OiGbT6Q",
+      "link": "https://leetcode.com/problems/merge-k-sorted-lists/",
+      "companies": []
+    },
+    {
+      "name": "Smallest Range: Smallest Range Covering Elements from K Lists",
+      "slug": "smallest-range-covering-elements-from-k-lists",
+      "status": "EXISTS",
+      "current_topic": "Heaps",
+      "difficulty": "hard",
+      "video": "https://youtu.be/zplklOy7ENo",
+      "link": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/",
+      "companies": []
+    }
+  ],
+  "Two Heaps": [
+    {
+      "name": "Find Median from Data Stream",
+      "slug": "find-median-from-data-stream",
+      "status": "EXISTS",
+      "current_topic": "Heaps",
+      "difficulty": "hard",
+      "video": "https://youtu.be/itmhHWaHupI",
+      "link": "https://leetcode.com/problems/find-median-from-data-stream/",
+      "companies": []
+    },
+{
+    "name": "Sliding Window Median",
+    "slug": "sliding-window-median",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/sliding-window-median/",
+    "difficulty": "Hard",
+    "video": "https://www.youtube.com/watch?v=HCb1dT0sJic",
+    "companies": ["Amazon", "Google", "Facebook", "Microsoft", "Apple"]
+  },
+  {
+    "name": "IPO",
+    "slug": "ipo",
+    "status": "NEW",
+    "link": "https://leetcode.com/problems/ipo/",
+    "difficulty": "Hard",
+    "video": "https://www.youtube.com/watch?v=H5iQ0Wpj2EQ",
+    "companies": ["Google", "Amazon", "Facebook", "Microsoft", "Apple"]
+  }
+  ],
+  "Monotonic Stack": [
+    {
+      "name": "Next Greater Element II",
+      "slug": "next-greater-element-ii",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/next-greater-element-ii/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=7PrncD7v9YQ",
+      "companies": ["Amazon", "Microsoft", "Google", "Apple", "Facebook"]
+    },
+    {
+      "name": "Next Greater Node in Linked List",
+      "slug": "next-greater-node-in-linked-list",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/next-greater-node-in-linked-list/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=ysdUdZEXo3Y",
+      "companies": ["Microsoft", "Amazon", "Google", "Apple", "LinkedIn"]
+    },
+    {
+      "name": "Daily Temperatures",
+      "slug": "daily-temperatures",
+      "status": "EXISTS",
+      "current_topic": "Stack/Queue",
+      "difficulty": "medium",
+      "video": "https://youtu.be/cTBiBSnjO3c",
+      "link": "https://leetcode.com/problems/daily-temperatures/",
+      "companies": []
+    },
+    {
+      "name": "Online Stock Span",
+      "slug": "online-stock-span",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/online-stock-span/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=slYh0ZNEqSw",
+      "companies": ["Google", "Microsoft", "Amazon", "Facebook", "Apple"]
+    },
+    {
+      "name": "Maximum Width Ramp",
+      "slug": "maximum-width-ramp",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/maximum-width-ramp/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=3pTEJ1vzgSI",
+      "companies": ["Amazon", "Google", "Microsoft", "Uber", "Apple"]
+    },
+    {
+      "name": "Largest Rectangle in Histogram",
+      "slug": "largest-rectangle-in-histogram",
+      "status": "EXISTS",
+      "current_topic": "Stack/Queue",
+      "difficulty": "hard",
+      "video": "https://youtu.be/zx5Sw9130L0",
+      "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+      "companies": []
+    },
+    {
+      "name": "Next Greater Element I",
+      "slug": "next-greater-element-i",
+      "status": "EXISTS",
+      "current_topic": "Stack/Queue",
+      "difficulty": "easy",
+      "video": "https://youtu.be/Du881K7Jtk8",
+      "link": "https://leetcode.com/problems/next-greater-element-i/",
+      "companies": []
+    },
+    {
+      "name": "Valid Parentheses",
+      "slug": "valid-parentheses",
+      "status": "EXISTS",
+      "current_topic": "Stack/Queue",
+      "difficulty": "easy",
+      "video": "https://youtu.be/WTzjTskDFMg",
+      "link": "https://leetcode.com/problems/valid-parentheses/",
+      "companies": []
+    }
+  ],
+  "Trees: Level Order Traversal (BFS in Binary Tree)": [
+      {
+        "name": "Level order Traversal",
+        "slug": "binary-tree-level-order-traversal",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "medium",
+        "video": "https://youtu.be/6ZnyEApgFYg",
+        "link": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+        "companies": []
+      },
+      {
+        "name": "Zigzag Level order Traversal",
+        "slug": "binary-tree-zigzag-level-order-traversal",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "medium",
+        "video": "https://youtu.be/3OXWEdlIGl4",
+        "link": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
+        "companies": []
+      },
+ {
+        "name": "Even Odd Tree",
+        "slug": "even-odd-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/even-odd-tree/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=FkNWN1Fj_TY",
+        "companies": ["Microsoft", "Amazon", "Google"]
+      },
+      {
+        "name": "Reverse Odd Levels of Binary Tree",
+        "slug": "reverse-odd-levels-of-binary-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=3x3JoCb8-tU",
+        "companies": ["Microsoft", "Amazon", "Google"]
+      },
+      {
+        "name": "Deepest Leaves Sum",
+        "slug": "deepest-leaves-sum",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/deepest-leaves-sum/",
+        "difficulty": "Easy",
+        "video": "https://www.youtube.com/watch?v=kgG2LuxzAHU",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Add One Row to Tree",
+        "slug": "add-one-row-to-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/add-one-row-to-tree/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=Dmbisqlfo7Y",
+        "companies": ["Apple", "Google", "Amazon", "Microsoft"]
+      },
+      {
+        "name": "Maximum Width of Binary Tree",
+        "slug": "maximum-width-of-binary-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=FPzLE2L7uHs",
+        "companies": ["Amazon", "Google", "Microsoft", "Apple"]
+      },
+      {
+        "name": "All Nodes Distance K in Binary Tree",
+        "slug": "all-nodes-distance-k-in-binary-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=2IHdqU48N2w",
+        "companies": ["Facebook", "Amazon", "Microsoft", "Apple", "Google"]
+      }
+    ],
+    "Trees: Tree Construction": [
+      {
+        "name": "Construct BT from Preorder and Inorder",
+        "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "medium",
+        "video": "https://youtu.be/aZNaLrVebKQ",
+        "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+        "companies": []
+      },
+      {
+        "name": "Construct Binary Tree from Inorder and Postorder",
+        "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=vm63HuIU7kw",
+        "companies": ["Amazon", "Google", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Maximum Binary Tree",
+        "slug": "maximum-binary-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/maximum-binary-tree/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=TsNk71XjTGs",
+        "companies": ["Amazon", "Google", "Microsoft", "Facebook"]
+      },
+      {
+        "name": "Construct BST from Preorder",
+        "slug": "construct-binary-search-tree-from-preorder-traversal",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=WsaLbxUrQ04",
+        "companies": ["Amazon", "Google", "Microsoft", "Facebook"]
+      }
+    ],
+    "Trees: Height related Problems": [
+      {
+        "name": "Maximum Depth of BT",
+        "slug": "maximum-depth-of-binary-tree",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "easy",
+        "video": "https://youtu.be/hTM3phVI6YQ",
+        "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+        "companies": []
+      },
+      {
+        "name": "Balanced Binary Tree",
+        "slug": "balanced-binary-tree",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "easy",
+        "video": "https://youtu.be/Yt50Jfbd8Po",
+        "link": "https://leetcode.com/problems/balanced-binary-tree/",
+        "companies": []
+      },
+      {
+        "name": "Diameter of Binary Tree",
+        "slug": "diameter-of-binary-tree",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "easy",
+        "video": "https://youtu.be/K81C31ytOZE",
+        "link": "https://leetcode.com/problems/diameter-of-binary-tree/",
+        "companies": []
+      },
+      {
+        "name": "Minimum Depth of Binary Tree",
+        "slug": "minimum-depth-of-binary-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/minimum-depth-of-binary-tree/",
+        "difficulty": "Easy",
+        "video": "https://www.youtube.com/watch?v=My9ZyeCh_wE",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Minimum Height Trees",
+        "slug": "minimum-height-trees",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/nbo9foXXVxs",
+        "link": "https://leetcode.com/problems/minimum-height-trees/",
+        "companies": []
+      }
+    ],
+ "Trees: Root to Leaf Path": [
+      {
+        "name": "Binary Tree Paths",
+        "slug": "binary-tree-paths",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/binary-tree-paths/",
+        "difficulty": "Easy",
+        "video": "https://www.youtube.com/watch?v=H2D4HcVZq_g",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Path Sum II",
+        "slug": "path-sum-ii",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/path-sum-ii/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=-mkM5FUaA5c",
+        "companies": ["Amazon", "Google", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Sum Root to Leaf Numbers",
+        "slug": "sum-root-to-leaf-numbers",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/sum-root-to-leaf-numbers/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=5GfVu9QfbnU",
+        "companies": ["Amazon", "Google", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Insufficient Nodes in Root to Leaf Paths",
+        "slug": "insufficient-nodes-in-root-to-leaf-paths",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/",
+        "difficulty": "Medium",
+        "video": "",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Pseudo-Palindromic Paths in a Binary Tree",
+        "slug": "pseudo-palindromic-paths-in-a-binary-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=B2OHKRzfEyo",
+        "companies": ["Amazon", "Google", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Binary Tree Maximum Path Sum",
+        "slug": "binary-tree-maximum-path-sum",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=Hr5cWUld4vU",
+        "companies": ["Amazon", "Google", "Microsoft", "Apple", "Facebook"]
+      }
+    ],
+    "Trees: Ancestor problem": [
+      {
+        "name": "LCA of Binary Tree",
+        "slug": "lowest-common-ancestor-of-a-binary-tree",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "medium",
+        "video": "https://youtu.be/_-QHfMDde90",
+        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+        "companies": []
+      },
+      {
+        "name": "Max Difference Between Node and Ancestor",
+        "slug": "maximum-difference-between-node-and-ancestor",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=lwmrck9Q6oU",
+        "companies": ["Amazon", "Google", "Facebook", "Microsoft"]
+      },
+      {
+        "name": "Lowest Common Ancestor of Deepest Leaves",
+        "slug": "lowest-common-ancestor-of-deepest-leaves",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=Fawr5HSzCyc",
+        "companies": ["Amazon", "Google", "Facebook"]
+      },
+      {
+        "name": "Kth Ancestor of a Tree Node",
+        "slug": "kth-ancestor-of-a-tree-node",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/kth-ancestor-of-a-tree-node/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=X7cFOKYnOTk",
+        "companies": ["Amazon", "Google"]
+      }
+    ],
+    "Trees: Binary Search Tree": [
+      {
+        "name": "Validate BST",
+        "slug": "validate-binary-search-tree",
+        "status": "EXISTS",
+        "current_topic": "Binary Search Tree",
+        "difficulty": "medium",
+        "video": "https://youtu.be/s6ATEkipzow",
+        "link": "https://leetcode.com/problems/validate-binary-search-tree/",
+        "companies": []
+      },
+      {
+        "name": "Range Sum of BST",
+        "slug": "range-sum-of-bst",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/range-sum-of-bst/",
+        "difficulty": "Easy",
+        "video": "https://www.youtube.com/watch?v=Ozi34P9kys8",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Minimum Absolute Difference in BST",
+        "slug": "minimum-absolute-difference-in-bst",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/minimum-absolute-difference-in-bst/",
+        "difficulty": "Easy",
+        "video": "https://www.youtube.com/watch?v=Y-KExT7QYK0",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Insert into a Binary Search Tree",
+        "slug": "insert-into-a-binary-search-tree",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/insert-into-a-binary-search-tree/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=WcRtjJfgmsM",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "LCA of BST",
+        "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+        "status": "EXISTS",
+        "current_topic": "Binary Search Tree",
+        "difficulty": "easy",
+        "video": "https://youtu.be/gs2LMfuOR9k",
+        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+        "companies": []
+      }
+    ],
+    "Trees: Other": [
+      {
+        "name": "Serialize and Deserialize Binary Tree",
+        "slug": "serialize-and-deserialize-binary-tree",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "hard",
+        "video": "https://youtu.be/u4JAi2JJhI8",
+        "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+        "companies": []
+      },
+      {
+        "name": "Vertical Order Traversal",
+        "slug": "vertical-order-traversal-of-a-binary-tree",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "hard",
+        "video": "https://youtu.be/q_a6lpbKJdw",
+        "link": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
+        "companies": []
+      },
+      {
+        "name": "Binary Tree Preorder Traversal",
+        "slug": "binary-tree-preorder-traversal",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "easy",
+        "video": "https://youtu.be/Bfqd8BsPVuw",
+        "link": "https://leetcode.com/problems/binary-tree-preorder-traversal/",
+        "companies": []
+      },
+      {
+        "name": "Binary Tree Right Side View",
+        "slug": "binary-tree-right-side-view",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "medium",
+        "video": "https://youtu.be/KV4mRzTjlAk",
+        "link": "https://leetcode.com/problems/binary-tree-right-side-view/",
+        "companies": []
+      },
+      {
+        "name": "Binary Tree Postorder Traversal",
+        "slug": "binary-tree-postorder-traversal",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "easy",
+        "video": "https://youtu.be/QhszUQhGGlA",
+        "link": "https://leetcode.com/problems/binary-tree-postorder-traversal/",
+        "companies": []
+      },
+      {
+        "name": "Binary Tree Inorder Traversal",
+        "slug": "binary-tree-inorder-traversal",
+        "status": "EXISTS",
+        "current_topic": "Binary Tree",
+        "difficulty": "easy",
+        "video": "https://youtu.be/lxTGsVXjwvM",
+        "link": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
+        "companies": []
+      }
+    ],
+  "DP on Take / Not take": [
+      {
+        "name": "House Robber ii",
+        "slug": "house-robber-ii",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/rWAJCfYYOvM",
+        "link": "https://leetcode.com/problems/house-robber-ii/",
+        "companies": []
+      },
+      {
+        "name": "Target Sum",
+        "slug": "target-sum",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/target-sum/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=g0npyaQtAQM",
+        "companies": ["Amazon", "Google", "Microsoft", "Facebook", "Apple"]
+      },
+      {
+        "name": "Partition Equal Subset Sum",
+        "slug": "partition-equal-subset-sum",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=snue4L5WrJ4",
+        "companies": ["Amazon", "Google", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Ones and Zeroes",
+        "slug": "ones-and-zeroes",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/ones-and-zeroes/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=miZ3qV04b1g",
+        "companies": ["Google", "Facebook", "Amazon", "Microsoft", "Apple"]
+      },
+      {
+        "name": "Last Stone Weight II",
+        "slug": "last-stone-weight-ii",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/last-stone-weight-ii/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=gdXkkmzvR3c",
+        "companies": ["Google", "Microsoft", "Apple", "Amazon", "Facebook"]
+      }
+    ],
+    "DP on Infinite Supply (Unbounded)": [
+      {
+        "name": "Coin Change",
+        "slug": "coin-change",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/coin-change/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=H9bfqozjoqs",
+        "companies": ["Google", "Amazon", "Apple", "Microsoft"]
+      },
+      {
+        "name": "Coin Change II",
+        "slug": "coin-change-ii",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/coin-change-ii/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=Mjy4hd2xgrs",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Perfect Squares",
+        "slug": "perfect-squares",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/perfect-squares/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=HLZLwjzIVGo",
+        "companies": ["Google", "Amazon", "Facebook", "Apple"]
+      },
+      {
+        "name": "Minimum Cost for Tickets",
+        "slug": "minimum-cost-for-tickets",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/minimum-cost-for-tickets/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=4Kww-zIkWWY",
+        "companies": ["Expedia", "Google", "Amazon", "Microsoft"]
+      }
+    ],
+    "DP on Longest Increasing subsequence": [
+      {
+        "name": "Largest Divisible Subset",
+        "slug": "largest-divisible-subset",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/largest-divisible-subset/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=LeRU6irRoW0",
+        "companies": ["Dropbox", "Amazon", "Google"]
+      },
+      {
+        "name": "Maximum Length of Pair Chain",
+        "slug": "maximum-length-of-pair-chain",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/maximum-length-of-pair-chain/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=DwBAu_WTFyo",
+        "companies": ["Facebook", "Google", "Amazon"]
+      },
+      {
+        "name": "Number of LIS",
+        "slug": "number-of-longest-increasing-subsequence",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/22s1xxRvy28",
+        "link": "https://leetcode.com/problems/number-of-longest-increasing-subsequence/",
+        "companies": []
+      },
+      {
+        "name": "Longest String Chain",
+        "slug": "longest-string-chain",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/longest-string-chain/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=7b0V1gT_TIk",
+        "companies": ["Google", "Amazon", "Microsoft", "Apple"]
+      }
+    ],
+    "DP on Grids": [
+      {
+        "name": "Unique Paths ii",
+        "slug": "unique-paths-ii",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/z6kelCB0vOA",
+        "link": "https://leetcode.com/problems/unique-paths-ii/",
+        "companies": []
+      },
+      {
+        "name": "Minimum Path Sum",
+        "slug": "minimum-path-sum",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/_rgTlyky1uQ",
+        "link": "https://leetcode.com/problems/minimum-path-sum/",
+        "companies": []
+      },
+      {
+        "name": "Triangle",
+        "slug": "triangle",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/triangle/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=OM1MTokvxs4",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Minimum Falling Path Sum",
+        "slug": "minimum-falling-path-sum",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/minimum-falling-path-sum/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=b_F3mz9l-uQ",
+        "companies": ["Amazon", "Google", "Microsoft"]
+      },
+      {
+        "name": "Maximal Square",
+        "slug": "maximal-square",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/maximal-square/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=6X7Ha2PrDmM",
+        "companies": ["Microsoft", "Google", "Amazon"]
+      },
+      {
+        "name": "Cherry Pickup",
+        "slug": "cherry-pickup",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/cherry-pickup/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=x_U3dJhPdlE",
+        "companies": ["Google", "Microsoft", "Amazon"]
+      },
+      {
+        "name": "Dungeon Game: Dungeon Game",
+        "slug": "dungeon-game",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "hard",
+        "video": "https://youtu.be/4uUGxNF0-3w",
+        "link": "https://leetcode.com/problems/dungeon-game/",
+        "companies": []
+      },
+      {
+        "name": "Unique Paths",
+        "slug": "unique-paths",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/IlEsdxuD4lY",
+        "link": "https://leetcode.com/problems/unique-paths/",
+        "companies": []
+      }
+    ],
+    "DP on Strings": [
+      {
+        "name": "Longest Common Subsequence",
+        "slug": "longest-common-subsequence",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/NPZn9jBrX8U",
+        "link": "https://leetcode.com/problems/longest-common-subsequence/",
+        "companies": []
+      },
+      {
+        "name": "Longest Palindromic Subsequence",
+        "slug": "longest-palindromic-subsequence",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/6i_T5kkfv4A",
+        "link": "https://leetcode.com/problems/longest-palindromic-subsequence/",
+        "companies": []
+      },
+      {
+        "name": "Palindromic Substrings",
+        "slug": "palindromic-substrings",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/4RACzI5-du8",
+        "link": "https://leetcode.com/problems/palindromic-substrings/",
+        "companies": []
+      },
+      {
+        "name": "Longest Palindromic Substring",
+        "slug": "longest-palindromic-substring",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/longest-palindromic-substring/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=uX0-xyPkR2w",
+        "companies": ["Google", "Apple", "Microsoft"]
+      },
+      {
+        "name": "Edit Distance",
+        "slug": "edit-distance",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "hard",
+        "video": "https://youtu.be/XYi2-LPrwm4",
+        "link": "https://leetcode.com/problems/edit-distance/",
+        "companies": []
+      },
+      {
+        "name": "Minimum ASCII Delete Sum for Two Strings",
+        "slug": "minimum-ascii-delete-sum-for-two-strings",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=kJcHk4sRzDM",
+        "companies": ["Microsoft", "Google", "Amazon"]
+      },
+      {
+        "name": "Distinct Subsequences",
+        "slug": "distinct-subsequences",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "hard",
+        "video": "https://youtu.be/nVG7eTiD2bY",
+        "link": "https://leetcode.com/problems/distinct-subsequences/",
+        "companies": []
+      },
+      {
+        "name": "Shortest Common Supersequence",
+        "slug": "shortest-common-supersequence",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/shortest-common-supersequence/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=JkjQNJSxXN0",
+        "companies": ["Microsoft", "Google", "Amazon"]
+      },
+      {
+        "name": "Wildcard Matching",
+        "slug": "wildcard-matching",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/wildcard-matching/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=Wo0AqP1zM6U",
+        "companies": ["Google", "Facebook"]
+      },
+      {
+        "name": "Longest Increasing Subsequence",
+        "slug": "longest-increasing-subsequence",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/cjWnW0hdF1Y",
+        "link": "https://leetcode.com/problems/longest-increasing-subsequence/",
+        "companies": []
+      }
+    ],
+    "DP on Stocks": [
+      {
+        "name": "Buy and Sell Stocks ii",
+        "slug": "best-time-to-buy-and-sell-stock-ii",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/3SJ3pUkPQMc",
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",
+        "companies": []
+      },
+      {
+        "name": "Buy and Sell Stocks iii",
+        "slug": "best-time-to-buy-and-sell-stock-iii",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "hard",
+        "video": "https://youtu.be/-uQGzhYj8BQ",
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+        "companies": []
+      },
+      {
+        "name": "Buy and Sell Stock IV",
+        "slug": "best-time-to-buy-and-sell-stock-iv",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=qSGdZfkQ8C8",
+        "companies": ["Amazon", "Google"]
+      },
+      {
+        "name": "Buy and Sell Stocks with Cooldown",
+        "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/I7j0F7AHpb8",
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+        "companies": []
+      },
+      {
+        "name": "Buy and Sell Stock with Transaction Fee",
+        "slug": "best-time-to-buy-and-sell-stock-with-transaction-fee",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=k4eK-vEmnKg",
+        "companies": ["Google", "Amazon"]
+      },
+      {
+        "name": "Best Time to Buy and Sell Stock",
+        "slug": "best-time-to-buy-and-sell-stock",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "easy",
+        "video": "https://youtu.be/1pkOgXD63yU",
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+        "companies": []
+      }
+    ],
+    "Partition DP (MCM)": [
+      {
+        "name": "Partition Array for Maximum Sum",
+        "slug": "partition-array-for-maximum-sum",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/partition-array-for-maximum-sum/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=kWhy4ZUBdOY",
+        "companies": ["Amazon", "Microsoft"]
+      },
+      {
+        "name": "Burst Balloons",
+        "slug": "burst-balloons",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "hard",
+        "video": "https://youtu.be/VFskby7lUbw",
+        "link": "https://leetcode.com/problems/burst-balloons/",
+        "companies": []
+      },
+      {
+        "name": "Minimum Cost to Cut a Stick",
+        "slug": "minimum-cost-to-cut-a-stick",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=EVxTO5I0d7w",
+        "companies": ["Google", "Facebook", "Amazon"]
+      },
+      {
+        "name": "Palindrome Partitioning II",
+        "slug": "palindrome-partitioning-ii",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/palindrome-partitioning-ii/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=ot5Q9dD5rWM",
+        "companies": ["Google", "Amazon"]
+      }
+    ],
+    "DP: Other": [
+      {
+        "name": "Decode Ways",
+        "slug": "decode-ways",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/6aEyTjFi7EU",
+        "link": "https://leetcode.com/problems/decode-ways/",
+        "companies": []
+      },
+      {
+        "name": "Russian Doll Envelopes",
+        "slug": "russian-doll-envelopes",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "hard",
+        "video": "https://youtu.be/CE2b_-XfVDk",
+        "link": "https://leetcode.com/problems/russian-doll-envelopes/",
+        "companies": []
+      },
+      {
+        "name": "Regular Expression Matching",
+        "slug": "regular-expression-matching",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "hard",
+        "video": "https://youtu.be/HAA8mgxlov8",
+        "link": "https://leetcode.com/problems/regular-expression-matching/",
+        "companies": []
+      },
+      {
+        "name": "House Robber",
+        "slug": "house-robber",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "medium",
+        "video": "https://youtu.be/xlvhyfcoQa4",
+        "link": "https://leetcode.com/problems/house-robber/",
+        "companies": []
+      },
+      {
+        "name": "Climbing Stairs",
+        "slug": "climbing-stairs",
+        "status": "EXISTS",
+        "current_topic": "Dynamic Programming",
+        "difficulty": "easy",
+        "video": "https://youtu.be/Y0lT9Fck7qI",
+        "link": "https://leetcode.com/problems/climbing-stairs/",
+        "companies": []
+      }
+    ],
+  "Graph: Topological Sort": [
+      {
+        "name": "Course Schedule",
+        "slug": "course-schedule",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/EgI5nU9etnU",
+        "link": "https://leetcode.com/problems/course-schedule/",
+        "companies": []
+      },
+      {
+        "name": "Course Schedule II",
+        "slug": "course-schedule-ii",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/Akt3glAwyfY",
+        "link": "https://leetcode.com/problems/course-schedule-ii/",
+        "companies": []
+      },
+      {
+        "name": "Strange Printer II",
+        "slug": "strange-printer-ii",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/strange-printer-ii/",
+        "difficulty": "Hard",
+        "video": "https://www.youtube.com/watch?v=1nfq3UddUUM",
+        "companies": ["Microsoft", "Google", "Apple"]
+      },
+      {
+        "name": "Sequence Reconstruction",
+        "slug": "sequence-reconstruction",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/VXINChcJz0Y",
+        "link": "https://leetcode.com/problems/sequence-reconstruction/",
+        "companies": []
+      },
+      {
+        "name": "Alien Dictionary",
+        "slug": "alien-dictionary",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "hard",
+        "video": "https://youtu.be/6kTZYvNNyps",
+        "link": "https://leetcode.com/problems/alien-dictionary/",
+        "companies": []
+      }
+    ],
+    "Graph: Union Find (Disjoint Set)": [
+      {
+        "name": "Number of Operations to Make Network Connected",
+        "slug": "number-of-operations-to-make-network-connected",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/FMwpt_aQOGw",
+        "link": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+        "companies": []
+      },
+      {
+        "name": "Redundant Connection",
+        "slug": "redundant-connection",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/wU6udHRIkcc",
+        "link": "https://leetcode.com/problems/redundant-connection/",
+        "companies": []
+      },
+      {
+        "name": "Accounts Merge",
+        "slug": "accounts-merge",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/wU6udHRIkcc",
+        "link": "https://leetcode.com/problems/accounts-merge/",
+        "companies": []
+      },
+      {
+        "name": "Satisfiability of Equality Equations",
+        "slug": "satisfiability-of-equality-equations",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/VnNiLzM6Qe8",
+        "link": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
+        "companies": []
+      }
+    ],
+    "Graph: Algorithms": [
+      {
+        "name": "Kruskal's Algorithm: Minimum Cost to connect all Points",
+        "slug": "min-cost-to-connect-all-points",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/f7JOBJIC-NA",
+        "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+        "companies": []
+      },
+      {
+        "name": "Dijkstra's Algorithm: Cheapest Flights Within K Stops",
+        "slug": "cheapest-flights-within-k-stops",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/5eIK3zUdYmE",
+        "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+        "companies": []
+      },
+      {
+        "name": "Find City With Smallest Number of Neighbors at a Threshold Distance",
+        "slug": "find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance",
+        "status": "NEW",
+        "link": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/",
+        "difficulty": "Medium",
+        "video": "https://www.youtube.com/watch?v=--wKPR3ByJc",
+        "companies": ["Uber"]
+      }
+    ],
+    "Graph: Other": [
+      {
+        "name": "Find if Path Exists in Graph",
+        "slug": "find-if-path-exists-in-graph",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "easy",
+        "video": "https://youtu.be/jDdFo4x1zYo",
+        "link": "https://leetcode.com/problems/find-if-path-exists-in-graph/",
+        "companies": []
+      },
+      {
+        "name": "Pacific Atlantic Water Flow",
+        "slug": "pacific-atlantic-water-flow",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/s-VkcjHqkGI",
+        "link": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+        "companies": []
+      },
+      {
+        "name": "Word Ladder II",
+        "slug": "word-ladder-ii",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "hard",
+        "video": "https://youtu.be/ZVafeF7Z5-E",
+        "link": "https://leetcode.com/problems/word-ladder-ii/",
+        "companies": []
+      },
+      {
+        "name": "Optimize Water Distribution",
+        "slug": "optimize-water-distribution-in-a-village",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "hard",
+        "video": "https://youtu.be/4lZMrYANDWQ",
+        "link": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
+        "companies": []
+      },
+      {
+        "name": "Network Delay Time",
+        "slug": "network-delay-time",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/EaphyqKU4PQ",
+        "link": "https://leetcode.com/problems/network-delay-time/",
+        "companies": []
+      },
+      {
+        "name": "Most Stones Removed with Same Row or Column",
+        "slug": "most-stones-removed-with-same-row-or-column",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/OwMNX8SPavM",
+        "link": "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/",
+        "companies": []
+      },
+      {
+        "name": "Clone Graph",
+        "slug": "clone-graph",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/mQeF6bN8hMk",
+        "link": "https://leetcode.com/problems/clone-graph/",
+        "companies": []
+      },
+      {
+        "name": "Swim in Rising Water",
+        "slug": "swim-in-rising-water",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "hard",
+        "video": "https://youtu.be/amvrKlMLuGY",
+        "link": "https://leetcode.com/problems/swim-in-rising-water/",
+        "companies": []
+      },
+      {
+        "name": "Path With Maximum Probability",
+        "slug": "path-with-maximum-probability",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/kbCzmTy608A",
+        "link": "https://leetcode.com/problems/path-with-maximum-probability/",
+        "companies": []
+      },
+      {
+        "name": "Surrounded Regions",
+        "slug": "surrounded-regions",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "medium",
+        "video": "https://youtu.be/9z2BunAyTXA",
+        "link": "https://leetcode.com/problems/surrounded-regions/",
+        "companies": []
+      },
+      {
+        "name": "Critical Connections in Network",
+        "slug": "critical-connections-in-a-network",
+        "status": "EXISTS",
+        "current_topic": "Graphs",
+        "difficulty": "hard",
+        "video": "https://youtu.be/Rhxs4k6DyMM",
+        "link": "https://leetcode.com/problems/critical-connections-in-a-network/",
+        "companies": []
+      }
+    ],
+  "Greedy": [
+    {
+      "name": "Jump Game ii",
+      "slug": "jump-game-ii",
+      "status": "EXISTS",
+      "current_topic": "Greedy Algorithms",
+      "difficulty": "medium",
+      "video": "https://youtu.be/dJ7sWiOoK7g",
+      "link": "https://leetcode.com/problems/jump-game-ii/",
+      "companies": []
+    },
+    {
+      "name": "Gas Station",
+      "slug": "gas-station",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/gas-station/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=lJwbPZGo05A",
+      "companies": ["Amazon", "Google", "Microsoft"]
+    },
+    {
+      "name": "Bag of Tokens",
+      "slug": "bag-of-tokens",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/bag-of-tokens/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=prI82maTivg",
+      "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"]
+    },
+    {
+      "name": "Boats to Save People",
+      "slug": "boats-to-save-people",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/boats-to-save-people/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=PCGdb-46H_w",
+      "companies": ["Google", "Amazon", "Microsoft"]
+    },
+    {
+      "name": "Wiggle Subsequence",
+      "slug": "wiggle-subsequence",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/wiggle-subsequence/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=iJIAPtd9Z9s",
+      "companies": ["Google", "Apple"]
+    },
+    {
+      "name": "Car Pooling",
+      "slug": "car-pooling",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/car-pooling/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=08sn_w4LWEE",
+      "companies": ["Amazon", "Google"]
+    },
+    {
+      "name": "Candy",
+      "slug": "candy",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/candy/",
+      "difficulty": "Hard",
+      "video": "https://www.youtube.com/watch?v=1IzCRCcK17A",
+      "companies": ["Google", "Amazon"]
+    }
+,
+    {
+      "name": "Jump Game",
+      "slug": "jump-game",
+      "status": "EXISTS",
+      "current_topic": "Greedy Algorithms",
+      "difficulty": "medium",
+      "video": "https://youtu.be/Yan0cv2cLy8",
+      "link": "https://leetcode.com/problems/jump-game/",
+      "companies": []
+    }
+  ],
+  "Design Data Structure": [
+    {
+      "name": "Design Twitter",
+      "slug": "design-twitter",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/design-twitter/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=pNichitDD2E",
+      "companies": ["Twitter", "Amazon", "Google", "Microsoft", "Facebook"]
+    },
+    {
+      "name": "Design Browser History",
+      "slug": "design-browser-history",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/design-browser-history/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=i1G-kKnBu8k",
+      "companies": ["Google", "Microsoft"]
+    },
+    {
+      "name": "Design Circular Deque",
+      "slug": "design-circular-deque",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/design-circular-deque/",
+      "difficulty": "Medium",
+      "video": "https://www.youtube.com/watch?v=WOyovpIsK0I",
+      "companies": ["Google", "Microsoft"]
+    },
+    {
+      "name": "Snapshot Array",
+      "slug": "snapshot-array",
+      "status": "NEW",
+      "link": "https://leetcode.com/problems/snapshot-array/",
+      "difficulty": "Hard",
+      "video": "https://www.youtube.com/watch?v=HmnEtjPOJaA",
+      "companies": ["Google", "Facebook"]
+    },
+    {
+      "name": "LRU Cache",
+      "slug": "lru-cache",
+      "status": "EXISTS",
+      "current_topic": "Stack/Queue",
+      "difficulty": "medium",
+      "video": "https://youtu.be/7ABFKPK2hD4",
+      "link": "https://leetcode.com/problems/lru-cache/",
+      "companies": []
+    },
+    {
+      "name": "LFU Cache",
+      "slug": "lfu-cache",
+      "status": "EXISTS",
+      "current_topic": "Stack/Queue",
+      "difficulty": "hard",
+      "video": "https://youtu.be/0PSB9y8ehbk",
+      "link": "https://leetcode.com/problems/lfu-cache/",
+      "companies": []
+    },
+    {
+      "name": "Implement Trie",
+      "slug": "implement-trie-prefix-tree",
+      "status": "EXISTS",
+      "current_topic": "Tries",
+      "difficulty": "medium",
+      "video": "https://youtu.be/oobqoCJlHA0",
+      "link": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+      "companies": []
+    }
+  ]
+}
