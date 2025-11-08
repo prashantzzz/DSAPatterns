@@ -1623,11 +1623,19 @@
             
             .patterns-grid {
                 grid-template-columns: 1fr;
+                padding: 0;
+                margin: 0;
+                width: 100%;
             }
             
+            .problems-list {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
             .pattern-card.expanded-full-width {
-                grid-column: 1;
-                width: 100%;
+                width: calc(100vw - 32px);
+                margin-left: -8px;
             }
 
             .top-controls {
