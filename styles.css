@@ -1910,7 +1910,7 @@
             border-color: #56CCF2;
         }
 
-        /* Modern video and solve button styles - REDUCED SIZE */
+        /* Modern video and solve button styles */
         .video-btn {
             padding: 6px 12px;
             border: none;
@@ -1925,8 +1925,10 @@
             gap: 5px;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.25);
+            box-shadow: none; /*0 2px 6px rgba(102, 126, 234, 0.25);*/
             position: relative;
+            min-width: 60px; /* Added min-width */
+            max-width: 100px; /* Added max-width */
         }
 
         .video-btn svg {
@@ -1941,7 +1943,7 @@
 
         .video-btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.35);
+            /* box-shadow: 0 4px 10px rgba(102, 126, 234, 0.35); */
         }
 
         .video-btn:active {
@@ -1949,7 +1951,7 @@
         }
 
         .solve-btn {
-            padding: 6px 14px;
+            padding: 5px 12px;
             border: none;
             border-radius: 8px;
             background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);
@@ -1962,8 +1964,10 @@
             align-items: center;
             gap: 5px;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(47, 128, 237, 0.25);
+            box-shadow: none; /* 0 2px 6px rgba(47, 128, 237, 0.25);*/
             position: relative;
+            min-width: 50px; /* Added min-width */
+            max-width: 58px; /* Added max-width */
         }
 
         /* Remove arrow from solve button */
@@ -1973,7 +1977,7 @@
 
         .solve-btn:hover {
             transform: translateY(-1px) scale(1.03);
-            box-shadow: 0 4px 10px rgba(47, 128, 237, 0.35);
+            /* box-shadow: 0 4px 10px rgba(47, 128, 237, 0.35); */
         }
 
         .solve-btn:active {
@@ -1995,15 +1999,6 @@
             box-shadow: 0 2px 8px rgba(47, 128, 237, 0.4);
         }
 
-        /* Dark mode button adjustments */
-        body.dark-mode .video-btn {
-            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);
-        }
-
-        body.dark-mode .solve-btn {
-            box-shadow: 0 2px 6px rgba(47, 128, 237, 0.4);
-        }
-
         @media (prefers-color-scheme: dark) {
             .checkmark {
                 border-color: rgba(255, 255, 255, 0.2);
@@ -2017,14 +2012,6 @@
                 background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 100%);
                 border-color: #2F80ED;
                 box-shadow: 0 2px 8px rgba(47, 128, 237, 0.4);
-            }
-            
-            .video-btn {
-                box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);
-            }
-            
-            .solve-btn {
-                box-shadow: 0 2px 6px rgba(47, 128, 237, 0.4);
             }
         }
 
@@ -2185,9 +2172,12 @@
                 margin: 6px 0;
             }
             
-            .video-btn,
-            .solve-btn {
+            .video-btn {
                 padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+            .solve-btn {
+                padding: 5px 12px;
                 font-size: 0.75rem;
             }
             
