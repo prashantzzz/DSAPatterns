@@ -805,12 +805,13 @@ let currentFilter = 'all';
             const header = document.querySelector('.header');
             const headerHeight = header ? header.offsetHeight : 0;
             
+            // Tweak this number if you want the card positioned lower/higher on the screen
+            const breathingRoom = 75;
+
             // Calculate card position
             const cardRect = card.getBoundingClientRect();
             const cardTop = cardRect.top + window.pageYOffset;
-            
-            // Calculate scroll position with header offset and breathing room
-            const scrollPosition = cardTop - headerHeight - 20; // 20px padding from top
+            const scrollPosition = Math.max(cardTop - headerHeight - breathingRoom, 0);
             
             // Smooth scroll to calculated position
             window.scrollTo({
