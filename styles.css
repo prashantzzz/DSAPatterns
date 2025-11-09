@@ -88,6 +88,15 @@
     --shadow-morphism: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.7);
     --shadow-inset: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
     --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+    /* Scrollbar variables (centralized) */
+    --scrollbar-width: 10px;
+    --scrollbar-track: transparent;
+    --scrollbar-thumb: rgba(16,24,40,0.08);
+    --scrollbar-thumb-hover: rgba(16,24,40,0.16);
+    --scrollbar-thumb-dark: rgba(255,255,255,0.08);
+    --scrollbar-thumb-dark-hover: rgba(255,255,255,0.16);
+    --scrollbar-radius: 999px;
 }
 
 .dark-mode {
@@ -152,6 +161,8 @@
         color 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 body {
@@ -429,10 +440,11 @@ h6,
     flex-direction: column;
     gap: 24px;
     position: sticky;
-    top: 70px;
+    top: 64px;
     align-self: flex-start;
-    max-height: calc(100vh - 90px);
+    height: calc(100vh - 64px);
     overflow-y: auto;
+    /* padding-bottom: 10; */
 }
 
 .main-content {
@@ -450,9 +462,9 @@ h6,
     padding: 24px;
     border-left: 1px solid var(--color-border);
     position: sticky;
-    top: 70px;
+    top: 64px;
     align-self: flex-start;
-    max-height: calc(100vh - 90px);
+    height: calc(100vh - 64px);
     overflow-y: auto;
 }
 
@@ -492,11 +504,9 @@ h6,
 /* Combined Topic Progress + Filter Styles */
 .topics-section {
     margin-bottom: 0;
-    /* Remove margin since we're using gap */
     display: flex;
     flex-direction: column;
-    max-height: 65vh;
-    /* Fixed maximum height - 65% of viewport */
+    max-height: 60vh; /* 65% of viewport */
 }
 
 .section-title {
@@ -517,56 +527,50 @@ h6,
     flex-direction: column;
     gap: 8px;
     overflow-y: auto;
-    /* Enable vertical scrolling */
     overflow-x: hidden;
-    /* Hide horizontal scrollbar */
-    max-height: calc(65vh - 40px);
-    /* Full height minus title */
+    max-height: calc(60vh - 40px);
     padding-right: 4px;
-    /* Space for scrollbar */
     scrollbar-width: thin;
-    /* Firefox: thin scrollbar */
     scrollbar-color: var(--color-border) transparent;
-    /* Firefox: scrollbar colors */
     scroll-behavior: smooth;
     /* Smooth scroll behavior */
 }
 
 /* Webkit Scrollbar Styling (Chrome, Safari, Edge) */
-.topic-list::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 6px;
 }
 
-.topic-list::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 3px;
 }
 
-.topic-list::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: var(--color-border);
     border-radius: 3px;
     transition: background 0.3s ease;
 }
 
-.topic-list::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
     background: var(--color-text-secondary);
 }
 
 /* Dark mode scrollbar */
-.dark-mode .topic-list::-webkit-scrollbar-thumb {
+.dark-mode *::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.2);
 }
 
-.dark-mode .topic-list::-webkit-scrollbar-thumb:hover {
+.dark-mode *::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
-    .topic-list::-webkit-scrollbar-thumb {
+    *::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, 0.2);
     }
 
-    .topic-list::-webkit-scrollbar-thumb:hover {
+    *::-webkit-scrollbar-thumb:hover {
         background: rgba(255, 255, 255, 0.3);
     }
 }
