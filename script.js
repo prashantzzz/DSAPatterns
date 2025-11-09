@@ -806,7 +806,7 @@ let currentFilter = 'all';
             const headerHeight = header ? header.offsetHeight : 0;
             
             // Tweak this number if you want the card positioned lower/higher on the screen
-            const breathingRoom = 75;
+            const breathingRoom = 78;
 
             // Calculate card position
             const cardRect = card.getBoundingClientRect();
